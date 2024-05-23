@@ -8,7 +8,6 @@ import 'package:file/file.dart';
 import 'package:http/http.dart' as http;
 import 'package:unified_analytics/unified_analytics.dart';
 
-import '../base/file_system.dart';
 import '../base/io.dart';
 import '../base/logger.dart';
 import '../base/os.dart';

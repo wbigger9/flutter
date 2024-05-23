@@ -1347,7 +1347,7 @@ void main() {
       final List<Key> keys = <Key>[];
       bool visitor(FocusNode node) {
         nodes.add(node);
-        keys.add(node.context!.widget.key!);
+        keys.add(node.context!.widget.key);
         return true;
       }
 

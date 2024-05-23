@@ -4,7 +4,6 @@
 
 import '../base/common.dart';
 import '../base/config.dart';
-import '../base/file_system.dart';
 import '../base/platform.dart';
 import '../base/process.dart';
 import '../base/version.dart';

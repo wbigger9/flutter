@@ -121,7 +121,7 @@ class CupertinoContextMenu extends StatefulWidget {
   CupertinoContextMenu({
     super.key,
     required this.actions,
-    required Widget this.child,
+    required this.child,
     this.enableHapticFeedback = false,
   }) : assert(actions.isNotEmpty),
        builder = ((BuildContext context, Animation<double> animation) => child);
@@ -452,13 +452,13 @@ class _CupertinoContextMenuState extends State<CupertinoContextMenu> with Ticker
         sigmaY: 5.0,
       ),
       contextMenuLocation: _contextMenuLocation,
-      previousChildRect: _decoyChildEndRect!,
+      previousChildRect: _decoyChildEndRect,
       builder: (BuildContext context, Animation<double> animation) {
         if (widget.child == null) {
           final Animation<double> localAnimation = Tween<double>(begin: CupertinoContextMenu.animationOpensAt, end: 1).animate(animation);
           return widget.builder(context, localAnimation);
         }
-        return _defaultPreviewBuilder(context, animation, widget.child!);
+        return _defaultPreviewBuilder(context, animation, widget.child);
       },
     );
     Navigator.of(context, rootNavigator: true).push<void>(_route!);

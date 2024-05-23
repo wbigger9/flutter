@@ -6,7 +6,6 @@ import 'package:xml/xml.dart';
 
 import '../base/common.dart';
 import '../base/error_handling_io.dart';
-import '../base/file_system.dart';
 import '../base/logger.dart';
 import '../base/project_migrator.dart';
 import '../build_info.dart';
@@ -177,7 +176,7 @@ class SwiftPackageManagerIntegrationMigration extends ProjectMigrator {
     } finally {
       ErrorHandlingFileSystem.deleteIfExists(backupProjectSettings);
       if (schemeInfo?.backupSchemeFile != null) {
-        ErrorHandlingFileSystem.deleteIfExists(schemeInfo!.backupSchemeFile!);
+        ErrorHandlingFileSystem.deleteIfExists(schemeInfo!.backupSchemeFile);
       }
       migrationStatus?.stop();
     }

@@ -5,7 +5,6 @@
 import 'package:unified_analytics/unified_analytics.dart';
 
 import '../../base/common.dart';
-import '../../base/file_system.dart';
 import '../../base/project_migrator.dart';
 import '../../reporting/reporting.dart';
 import '../../xcode_project.dart';

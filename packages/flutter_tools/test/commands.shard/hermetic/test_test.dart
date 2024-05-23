@@ -314,7 +314,7 @@ dev_dependencies:
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -369,7 +369,7 @@ dev_dependencies:
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),

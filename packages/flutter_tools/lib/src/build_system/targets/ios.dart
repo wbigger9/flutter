@@ -8,7 +8,6 @@ import 'package:unified_analytics/unified_analytics.dart';
 import '../../artifacts.dart';
 import '../../base/build.dart';
 import '../../base/common.dart';
-import '../../base/file_system.dart';
 import '../../base/io.dart';
 import '../../base/process.dart';
 import '../../build_info.dart';

@@ -392,7 +392,7 @@ class _BottomSheetState extends State<BottomSheet> {
           : Stack(
               alignment: Alignment.topCenter,
               children: <Widget>[
-                dragHandle!,
+                dragHandle,
                 Padding(
                   padding: const EdgeInsets.only(top: kMinInteractiveDimension),
                   child: widget.builder(context),
@@ -1087,7 +1087,7 @@ class ModalBottomSheetRoute<T> extends PopupRoute<T> {
       willDisposeAnimationController = false;
     } else {
       _animationController = BottomSheet.createAnimationController(
-        navigator!,
+        navigator,
         sheetAnimationStyle: sheetAnimationStyle,
       );
     }

@@ -25,7 +25,7 @@ import '../../src/common.dart';
 import '../test_utils.dart' show ProcessResultMatcher, fileSystem, platform;
 import '../transition_test_utils.dart';
 
-final String hostOs = platform.operatingSystem;
+const String hostOs = platform.operatingSystem;
 
 final List<String> devices = <String>[
   'flutter-tester',
@@ -566,7 +566,7 @@ Future<Directory> createTestProject(String packageName, Directory tempDirectory)
 }
 
 Future<void> addLinkHookDepedendency(Directory packageDirectory) async {
-  final Directory flutterDirectory = fileSystem.currentDirectory.parent.parent;
+  const Directory flutterDirectory = fileSystem.currentDirectory.parent.parent;
   final Directory linkHookDirectory = flutterDirectory
       .childDirectory('dev')
       .childDirectory('integration_tests')

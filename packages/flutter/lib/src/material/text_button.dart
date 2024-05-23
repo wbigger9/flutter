@@ -86,7 +86,7 @@ class TextButton extends ButtonStyleButton {
     super.clipBehavior,
     super.statesController,
     super.isSemanticButton,
-    required Widget super.child,
+    required super.child,
     super.iconAlignment,
   });
 
@@ -233,7 +233,7 @@ class TextButton extends ButtonStyleButton {
     final MaterialStateProperty<Color?>? overlayColorProp = switch ((foregroundColor, overlayColor)) {
       (null, null) => null,
       (_, final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
-      (_, _) => _TextButtonDefaultOverlay((overlayColor ?? foregroundColor)!),
+      (_, _) => _TextButtonDefaultOverlay(overlayColor ?? foregroundColor),
     };
     final MaterialStateProperty<MouseCursor?> mouseCursor = _TextButtonDefaultMouseCursor(enabledMouseCursor, disabledMouseCursor);
 

@@ -8,7 +8,6 @@ import 'package:unified_analytics/unified_analytics.dart';
 
 import '../artifacts.dart';
 import '../base/common.dart';
-import '../base/file_system.dart';
 import '../build_info.dart';
 import '../build_system/build_system.dart';
 import '../build_system/depfile.dart';
@@ -179,7 +178,7 @@ class AssembleCommand extends FlutterCommand {
 
   /// The target(s) we are building.
   List<Target> createTargets() {
-    final ArgResults argumentResults = argResults!;
+    final ArgResults argumentResults = argResults;
     if (argumentResults.rest.isEmpty) {
       throwToolExit('missing target name for flutter assemble.');
     }
@@ -266,7 +265,7 @@ class AssembleCommand extends FlutterCommand {
       final String value = chunk.substring(indexEquals + 1);
       results[key] = value;
     }
-    final ArgResults argumentResults = argResults!;
+    final ArgResults argumentResults = argResults;
     if (argumentResults.wasParsed(FlutterOptions.kExtraGenSnapshotOptions)) {
       results[kExtraGenSnapshotOptions] = (argumentResults[FlutterOptions.kExtraGenSnapshotOptions] as List<String>).join(',');
     }
@@ -324,7 +323,7 @@ class AssembleCommand extends FlutterCommand {
     } else if (targets.isNotEmpty) {
       target = targets.single;
     }
-    final ArgResults argumentResults = argResults!;
+    final ArgResults argumentResults = argResults;
     final BuildResult result = await _buildSystem.build(
       target!,
       _environment,

@@ -12,7 +12,6 @@ import 'artifacts.dart';
 import 'asset.dart';
 import 'base/config.dart';
 import 'base/context.dart';
-import 'base/file_system.dart';
 import 'base/io.dart';
 import 'base/logger.dart';
 import 'base/net.dart';

@@ -3246,7 +3246,7 @@ class FakeSwiftPackageManagerIntegrationMigration extends SwiftPackageManagerInt
       );
 
       expect(schemeInfo?.backupSchemeFile, isNotNull);
-      final File backupScheme = schemeInfo!.backupSchemeFile!;
+      final File backupScheme = schemeInfo!.backupSchemeFile;
       expect(backupScheme.existsSync(), isTrue);
       final String originalScheme = backupScheme.readAsStringSync();
       expect(

@@ -8,7 +8,6 @@ import 'package:yaml/yaml.dart';
 import '../../artifacts.dart';
 import '../../base/build.dart';
 import '../../base/common.dart';
-import '../../base/file_system.dart';
 import '../../base/io.dart';
 import '../../build_info.dart';
 import '../../compile.dart';

@@ -72,7 +72,7 @@ void main() {
     }
 
     Color containerColor() {
-      return tester.widget<Container>(find.byKey(primaryContainerKey)).color!;
+      return tester.widget<Container>(find.byKey(primaryContainerKey)).color;
     }
 
     await tester.pumpWidget(buildFrame());
@@ -129,7 +129,7 @@ void main() {
     TextStyle itemTextStyle(String text) {
       return tester.widget<RichText>(
         find.descendant(of: find.text(text), matching: find.byType(RichText)),
-      ).text.style!;
+      ).text.style;
     }
 
     await tester.pumpWidget(buildFrame());
@@ -184,7 +184,7 @@ void main() {
     TextStyle itemTextStyle(String text) {
       return tester.widget<RichText>(
         find.descendant(of: find.text(text), matching: find.byType(RichText)),
-      ).text.style!;
+      ).text.style;
     }
 
     await tester.pumpWidget(buildFrame());
@@ -268,7 +268,7 @@ void main() {
     Color bannerColor() {
       return tester.widget<Material>(
         find.descendant(of: find.byType(MaterialBanner), matching: find.byType(Material)).first,
-      ).color!;
+      ).color;
     }
 
     TextStyle getTextStyle(String text) {
@@ -277,7 +277,7 @@ void main() {
           of: find.text(text),
           matching: find.byType(RichText),
         ),
-      ).text.style!;
+      ).text.style;
     }
 
     await tester.pumpWidget(buildFrame());
@@ -459,7 +459,7 @@ void main() {
     TextStyle getTextStyle(String text) {
       return tester.widget<RichText>(
         find.descendant(of: find.text(text), matching: find.byType(RichText)),
-      ).text.style!;
+      ).text.style;
     }
 
     TextStyle getIconStyle(Key key) {
@@ -468,7 +468,7 @@ void main() {
           of: find.byKey(key),
           matching: find.byType(RichText),
         ),
-      ).text.style!;
+      ).text.style;
     }
 
     await tester.pumpWidget(buildFrame());
@@ -644,7 +644,7 @@ void main() {
     Color getTextColor(String text) {
       return tester.widget<RichText>(
         find.descendant(of: find.text(text), matching: find.byType(RichText)),
-      ).text.style!.color!;
+      ).text.style!.color;
     }
 
     await tester.pumpWidget(buildFrame());

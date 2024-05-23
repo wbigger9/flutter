@@ -1514,7 +1514,7 @@ void main() {
 
       await tester.pumpWidget(buildNavigationBar());
       Icon icon = tester.widget<Icon>(find.byType(Icon).last);
-      final Color initialColor = icon.color!;
+      final Color initialColor = icon.color;
 
       // Trigger a rebuild.
       await tester.tap(find.text('Alarm'));

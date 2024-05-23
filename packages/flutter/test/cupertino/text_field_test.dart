@@ -169,7 +169,7 @@ void main() {
     }
     root.visitChildren(recursiveFinder);
     expect(renderEditable, isNotNull);
-    return renderEditable!;
+    return renderEditable;
   }
 
   List<TextSelectionPoint> globalize(Iterable<TextSelectionPoint> points, RenderBox box) {
@@ -505,7 +505,7 @@ void main() {
 
   testWidgets('Activates the text field when receives semantics focus on Mac, Windows', (WidgetTester tester) async {
     final SemanticsTester semantics = SemanticsTester(tester);
-    final SemanticsOwner semanticsOwner = tester.binding.pipelineOwner.semanticsOwner!;
+    final SemanticsOwner semanticsOwner = tester.binding.pipelineOwner.semanticsOwner;
     final FocusNode focusNode = FocusNode();
     addTearDown(focusNode.dispose);
     await tester.pumpWidget(

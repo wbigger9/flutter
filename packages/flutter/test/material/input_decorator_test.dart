@@ -107,7 +107,7 @@ Finder findBorderPainter() {
 }
 
 double getBorderBottom(WidgetTester tester) {
-  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()))!;
+  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()));
   return box.size.height;
 }
 
@@ -183,7 +183,7 @@ TextStyle getHintStyle(WidgetTester tester) {
   return tester.widget<RichText>(
     find.descendant(of: findHint(),
     matching: find.byType(RichText),
-  )).text.style!;
+  )).text.style;
 }
 
 Rect getHelperRect(WidgetTester tester) {
@@ -194,7 +194,7 @@ TextStyle getHelperStyle(WidgetTester tester) {
   return tester.widget<RichText>(
     find.descendant(of: findHelper(),
     matching: find.byType(RichText),
-  )).text.style!;
+  )).text.style;
 }
 
 Finder findError() {
@@ -209,7 +209,7 @@ TextStyle getErrorStyle(WidgetTester tester) {
   return tester.widget<RichText>(
     find.descendant(of: findError(),
     matching: find.byType(RichText),
-  )).text.style!;
+  )).text.style;
 }
 
 Finder findCounter() {
@@ -224,7 +224,7 @@ TextStyle getCounterStyle(WidgetTester tester) {
   return tester.widget<RichText>(
     find.descendant(of: findCounter(),
     matching: find.byType(RichText),
-  )).text.style!;
+  )).text.style;
 }
 
 Finder findDecorator() {
@@ -240,7 +240,7 @@ Offset getDecoratorCenter(WidgetTester tester) {
 }
 
 Rect getContainerRect(WidgetTester tester) {
-  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()))!;
+  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()));
   return box.paintBounds;
 }
 
@@ -264,7 +264,7 @@ BorderSide? getBorderSide(WidgetTester tester) {
 }
 
 BorderRadius? getBorderRadius(WidgetTester tester) {
-  final InputBorder border = getBorder(tester)!;
+  final InputBorder border = getBorder(tester);
   if (border is UnderlineInputBorder) {
     return border.borderRadius;
   }
@@ -5594,7 +5594,7 @@ void main() {
 
     final RenderObject renderer = tester.renderObject(find.byType(InputDecorator));
     final Iterable<String> nodeNames = renderer.debugDescribeChildren()
-      .map((DiagnosticsNode node) => node.name!);
+      .map((DiagnosticsNode node) => node.name);
     expect(nodeNames, unorderedEquals(<String>[
       'container',
       'counter',
@@ -5610,7 +5610,7 @@ void main() {
     ]));
 
     final Set<Object> nodeValues = Set<Object>.from(
-      renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value!),
+      renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value),
     );
     expect(nodeValues.length, 11);
   });
@@ -9324,14 +9324,14 @@ void main() {
           );
 
           // Vertical components: contentPadding.vertical, densityOffset.y, child
-          final double childVerticalSpaceAffordance = totalHeight
+          const double childVerticalSpaceAffordance = totalHeight
                                                     - visualDensity.baseSizeAdjustment.dy
                                                     - contentPadding.vertical;
 
           // TextAlignVertical.center is specified so `child` needs to be centered
           // in the available space.
-          final double childMargin = (childVerticalSpaceAffordance - childHeight) / 2;
-          final double childTop = visualDensity.baseSizeAdjustment.dy / 2.0
+          const double childMargin = (childVerticalSpaceAffordance - childHeight) / 2;
+          const double childTop = visualDensity.baseSizeAdjustment.dy / 2.0
                                 + contentPadding.top
                                 + childMargin;
 
@@ -10933,7 +10933,7 @@ void main() {
 
       final RenderObject renderer = tester.renderObject(find.byType(InputDecorator));
       final Iterable<String> nodeNames = renderer.debugDescribeChildren()
-        .map((DiagnosticsNode node) => node.name!);
+        .map((DiagnosticsNode node) => node.name);
       expect(nodeNames, unorderedEquals(<String>[
         'container',
         'counter',
@@ -10949,7 +10949,7 @@ void main() {
       ]));
 
       final Set<Object> nodeValues = Set<Object>.from(
-        renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value!),
+        renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value),
       );
       expect(nodeValues.length, 11);
     });

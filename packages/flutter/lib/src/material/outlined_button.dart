@@ -225,7 +225,7 @@ class OutlinedButton extends ButtonStyleButton {
     final MaterialStateProperty<Color?>? overlayColorProp = switch ((foregroundColor, overlayColor)) {
       (null, null) => null,
       (_, final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
-      (_, _) => _OutlinedButtonDefaultOverlay((overlayColor ?? foregroundColor)!),
+      (_, _) => _OutlinedButtonDefaultOverlay(overlayColor ?? foregroundColor),
     };
     final MaterialStateProperty<MouseCursor?> mouseCursor = _OutlinedButtonDefaultMouseCursor(enabledMouseCursor, disabledMouseCursor);
 

@@ -9,7 +9,6 @@ import 'package:pool/pool.dart';
 import 'package:process/process.dart';
 
 import '../../base/error_handling_io.dart';
-import '../../base/file_system.dart';
 import '../../base/io.dart';
 import '../../base/logger.dart';
 import '../../build_info.dart';

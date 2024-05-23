@@ -237,7 +237,7 @@ class ElevatedButton extends ButtonStyleButton {
     final MaterialStateProperty<Color?>? overlayColorProp = switch ((foregroundColor, overlayColor)) {
       (null, null) => null,
       (_, final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
-      (_, _) => _ElevatedButtonDefaultOverlay((overlayColor ?? foregroundColor)!),
+      (_, _) => _ElevatedButtonDefaultOverlay(overlayColor ?? foregroundColor),
     };
     final MaterialStateProperty<double>? elevationValue = switch (elevation) {
       null => null,

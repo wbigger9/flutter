@@ -195,7 +195,7 @@ void main() {
         ),
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.dark);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.dark);
   });
 
   testWidgets('Can specify custom brightness', (WidgetTester tester) async {
@@ -207,7 +207,7 @@ void main() {
         ),
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.light);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.light);
 
     await tester.pumpWidget(
       const CupertinoApp(
@@ -217,7 +217,7 @@ void main() {
         ),
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.dark);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.dark);
 
     await tester.pumpWidget(
       const CupertinoApp(
@@ -232,7 +232,7 @@ void main() {
         ),
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.light);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.light);
 
     await tester.pumpWidget(
       const CupertinoApp(
@@ -247,7 +247,7 @@ void main() {
         ),
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.dark);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.dark);
   });
 
   testWidgets('Padding works in RTL', (WidgetTester tester) async {
@@ -444,7 +444,7 @@ void main() {
         });
 
     Iterable<double> opacities = titles.map<double>((Element element) {
-      final RenderAnimatedOpacity renderOpacity = element.findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+      final RenderAnimatedOpacity renderOpacity = element.findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
       return renderOpacity.opacity.value;
     });
 
@@ -469,7 +469,7 @@ void main() {
         });
 
     opacities = titles.map<double>((Element element) {
-      final RenderAnimatedOpacity renderOpacity = element.findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+      final RenderAnimatedOpacity renderOpacity = element.findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
       return renderOpacity.opacity.value;
     });
 
@@ -574,21 +574,21 @@ void main() {
     expect(find.text('Middle'), findsOneWidget);
 
     // Initially (in expanded state) middle widget is not visible.
-    RenderAnimatedOpacity middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+    RenderAnimatedOpacity middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
     expect(middleOpacity.opacity.value, 0.0);
 
     scrollController.jumpTo(600.0);
     await tester.pumpAndSettle();
 
     // Middle widget is visible when nav bar is collapsed.
-    middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+    middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
     expect(middleOpacity.opacity.value, 1.0);
 
     scrollController.jumpTo(0.0);
     await tester.pumpAndSettle();
 
     // Middle widget is not visible when nav bar is again expanded.
-    middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+    middleOpacity = tester.element(find.text('Middle')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
     expect(middleOpacity.opacity.value, 0.0);
   });
 
@@ -624,7 +624,7 @@ void main() {
     expect(find.text('Different title'), findsOneWidget);
 
     RenderAnimatedOpacity largeTitleOpacity =
-        tester.element(find.text('Title')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+        tester.element(find.text('Title')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
     // Large title initially visible.
     expect(
       largeTitleOpacity.opacity.value,
@@ -643,7 +643,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
 
     largeTitleOpacity =
-        tester.element(find.text('Title')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>()!;
+        tester.element(find.text('Title')).findAncestorRenderObjectOfType<RenderAnimatedOpacity>();
     // Large title no longer visible.
     expect(
       largeTitleOpacity.opacity.value,
@@ -1035,7 +1035,7 @@ void main() {
         },
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.light);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.light);
   });
 
   testWidgets('NavBar draws a dark system bar for a light background', (WidgetTester tester) async {
@@ -1055,7 +1055,7 @@ void main() {
         },
       ),
     );
-    expectSameStatusBarStyle(SystemChrome.latestStyle!, SystemUiOverlayStyle.dark);
+    expectSameStatusBarStyle(SystemChrome.latestStyle, SystemUiOverlayStyle.dark);
   });
 
   testWidgets('CupertinoNavigationBarBackButton shows an error when manually added outside a route', (WidgetTester tester) async {

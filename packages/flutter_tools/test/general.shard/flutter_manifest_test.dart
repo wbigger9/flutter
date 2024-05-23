@@ -27,7 +27,7 @@ void main() {
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       '',
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isEmpty, true);
     expect(flutterManifest.appName, '');
@@ -58,7 +58,7 @@ dependencies:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest, isNotNull);
     expect(flutterManifest.isEmpty, false);
@@ -81,7 +81,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.usesMaterialDesign, true);
   });
@@ -98,7 +98,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.generateSyntheticPackage, true);
   });
@@ -115,7 +115,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.generateSyntheticPackage, false);
   });
@@ -132,7 +132,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.generateSyntheticPackage, false);
   });
@@ -154,7 +154,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(1));
     expect(flutterManifest.fonts.single, matchesFont(
@@ -191,7 +191,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(1));
     expect(flutterManifest.fonts.single, matchesFont(
@@ -231,7 +231,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(1));
     expect(flutterManifest.fonts.single, matchesFont(
@@ -277,7 +277,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(2));
     expect(flutterManifest.fonts, containsAll(<Matcher>[
@@ -339,7 +339,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fontsDescriptor, <Object>[
       <String, Object>{
@@ -385,7 +385,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(1));
     expect(flutterManifest.fonts, containsAll(<Matcher>[
@@ -428,7 +428,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fonts, hasLength(1));
     expect(flutterManifest.fonts, containsAll(<Matcher>[
@@ -467,7 +467,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.fontsDescriptor, isEmpty);
     expect(flutterManifest.fonts, isEmpty);
@@ -485,7 +485,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isEmpty, false);
     expect(flutterManifest.isModule, false);
@@ -506,7 +506,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isModule, true);
     expect(flutterManifest.androidPackage, 'com.example');
@@ -524,7 +524,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     expect(flutterManifest.androidPackage, 'com.example');
@@ -545,7 +545,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     expect(flutterManifest.androidPackage, 'com.example');
@@ -565,7 +565,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     expect(flutterManifest.androidPackage, isNull);
@@ -865,7 +865,7 @@ flutter:
        'pubspec.yaml',
       fileSystem: fileSystem,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isEmpty, false);
   });
@@ -886,7 +886,7 @@ flutter:
       'pubspec.yaml',
       fileSystem: fileSystem,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isEmpty, false);
   });
@@ -902,7 +902,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     expect(flutterManifest.supportedPlatforms, null);
@@ -921,7 +921,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     expect(flutterManifest.validSupportedPlatforms, null);
@@ -942,7 +942,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     final Map<String, dynamic> validSupportedPlatforms = flutterManifest.validSupportedPlatforms!;
@@ -968,7 +968,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.isPlugin, true);
     final Map<String, dynamic> validSupportedPlatforms = flutterManifest.validSupportedPlatforms!;
@@ -1054,7 +1054,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.additionalLicenses, <String>['foo.txt']);
   });
@@ -1118,7 +1118,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest, isNotNull);
     final List<DeferredComponent> deferredComponents = flutterManifest.deferredComponents!;
@@ -1154,7 +1154,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest, isNotNull);
     final List<DeferredComponent> deferredComponents = flutterManifest.deferredComponents!;
@@ -1186,7 +1186,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest, isNotNull);
     expect(flutterManifest.deferredComponents!.length, 0);
@@ -1391,7 +1391,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest, isNotNull);
     final List<DeferredComponent> deferredComponents = flutterManifest.deferredComponents!;
@@ -1429,7 +1429,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.disabledSwiftPackageManager, true);
   });
@@ -1445,7 +1445,7 @@ flutter:
     final FlutterManifest flutterManifest = FlutterManifest.createFromString(
       manifest,
       logger: logger,
-    )!;
+    );
 
     expect(flutterManifest.disabledSwiftPackageManager, false);
   });

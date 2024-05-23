@@ -957,7 +957,7 @@ class SliverReorderableListState extends State<SliverReorderableList> with Ticke
     assert(child.key != null, 'All list items must have a key');
     final OverlayState overlay = Overlay.of(context, debugRequiredFor: widget);
     return _ReorderableItem(
-      key: _ReorderableItemGlobalKey(child.key!, index, this),
+      key: _ReorderableItemGlobalKey(child.key, index, this),
       index: index,
       capturedThemes: InheritedTheme.capture(from: context, to: overlay.context),
       child: _wrapWithSemantics(child, index),
@@ -1037,7 +1037,7 @@ class SliverReorderableListState extends State<SliverReorderableList> with Ticke
     } else if (widget.itemExtentBuilder != null) {
       return SliverVariedExtentList(
         delegate: childrenDelegate,
-        itemExtentBuilder: widget.itemExtentBuilder!,
+        itemExtentBuilder: widget.itemExtentBuilder,
       );
     } else if (widget.prototypeItem != null) {
       return SliverPrototypeExtentList(
@@ -1051,7 +1051,7 @@ class SliverReorderableListState extends State<SliverReorderableList> with Ticke
 
 class _ReorderableItem extends StatefulWidget {
   const _ReorderableItem({
-    required Key super.key,
+    required super.key,
     required this.index,
     required this.child,
     required this.capturedThemes,
@@ -1341,9 +1341,9 @@ class _DragInfo extends Drag {
     capturedThemes = item.widget.capturedThemes;
     dragPosition = initialPosition;
     dragOffset = itemRenderBox.globalToLocal(initialPosition);
-    itemSize = item.context.size!;
+    itemSize = item.context.size;
     itemExtent = _sizeExtent(itemSize, scrollDirection);
-    itemLayoutConstraints = item.childLayoutConstraints!;
+    itemLayoutConstraints = item.childLayoutConstraints;
     scrollable = Scrollable.of(item.context);
   }
 
@@ -1420,7 +1420,7 @@ class _DragInfo extends Drag {
         index: index,
         size: itemSize,
         constraints: itemLayoutConstraints,
-        animation: _proxyAnimation!,
+        animation: _proxyAnimation,
         position: dragPosition - dragOffset - _overlayOrigin(context),
         proxyDecorator: proxyDecorator,
         child: child,
@@ -1471,7 +1471,7 @@ class _DragItemProxy extends StatelessWidget {
           Offset effectivePosition = position;
           final Offset? dropPosition = listState._finalDropPosition;
           if (dropPosition != null) {
-            effectivePosition = Offset.lerp(dropPosition - overlayOrigin, effectivePosition, Curves.easeOut.transform(animation.value))!;
+            effectivePosition = Offset.lerp(dropPosition - overlayOrigin, effectivePosition, Curves.easeOut.transform(animation.value));
           }
           return Positioned(
             left: effectivePosition.dx,

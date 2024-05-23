@@ -1614,7 +1614,7 @@ void main() {
       ),
     ));
 
-    final ModalRoute<dynamic> route = ModalRoute.of(scaffoldKey.currentContext!)!;
+    final ModalRoute<dynamic> route = ModalRoute.of(scaffoldKey.currentContext!);
     expect(route.canPop, false);
 
     scaffoldKey.currentState!.showBottomSheet((_) {

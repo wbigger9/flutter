@@ -48,3 +48,7 @@ flutter:
         pluginClass: IntegrationTestPlugin
 
 # PUBSPEC CHECKSUM: 3a98
+dev_dependencies:
+  integration_test_example: any
+  test: any
+  web: any

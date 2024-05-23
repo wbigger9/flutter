@@ -299,7 +299,7 @@ class FilledButton extends ButtonStyleButton {
     final MaterialStateProperty<Color?>? overlayColorProp = switch ((foregroundColor, overlayColor)) {
       (null, null) => null,
       (_, final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
-      (_, _) => _FilledButtonDefaultOverlay((overlayColor ?? foregroundColor)!),
+      (_, _) => _FilledButtonDefaultOverlay(overlayColor ?? foregroundColor),
     };
     final MaterialStateProperty<MouseCursor?> mouseCursor = _FilledButtonDefaultMouseCursor(enabledMouseCursor, disabledMouseCursor);
 

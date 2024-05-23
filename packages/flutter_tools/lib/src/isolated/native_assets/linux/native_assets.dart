@@ -7,7 +7,6 @@ import 'package:native_assets_builder/native_assets_builder.dart'
 import 'package:native_assets_cli/native_assets_cli_internal.dart';
 
 import '../../../base/common.dart';
-import '../../../base/file_system.dart';
 import '../../../base/io.dart';
 import '../../../build_info.dart';
 import '../../../globals.dart' as globals;

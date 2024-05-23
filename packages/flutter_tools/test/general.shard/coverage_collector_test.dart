@@ -29,7 +29,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -69,7 +69,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -195,7 +195,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -271,7 +271,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -346,7 +346,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -617,7 +617,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -701,7 +701,7 @@ void main() {
             ..isolates = <IsolateRef>[
               IsolateRef.parse(<String, Object>{
                 'id': '1',
-              })!,
+              }),
             ]
           ).toJson(),
         ),
@@ -811,7 +811,7 @@ FakeVmServiceHost createFakeVmServiceHostWithFooAndBar({
           ..isolates = <IsolateRef>[
             IsolateRef.parse(<String, Object>{
               'id': '1',
-            })!,
+            }),
           ]
         ).toJson(),
       ),

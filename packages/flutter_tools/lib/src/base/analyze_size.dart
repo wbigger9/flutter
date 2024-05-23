@@ -11,7 +11,6 @@ import 'package:vm_snapshot_analysis/treemap.dart';
 import '../convert.dart';
 import '../reporting/reporting.dart';
 import 'common.dart';
-import 'file_system.dart';
 import 'logger.dart';
 import 'terminal.dart';
 

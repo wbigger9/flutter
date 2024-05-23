@@ -541,7 +541,7 @@ void main() {
     );
 
     Color textColor() {
-      return tester.renderObject<RenderParagraph>(find.text('FilledButton')).text.style!.color!;
+      return tester.renderObject<RenderParagraph>(find.text('FilledButton')).text.style!.color;
     }
 
     // Default, not disabled.
@@ -620,7 +620,7 @@ void main() {
       ),
     );
 
-    Color iconColor() => _iconStyle(tester, Icons.add).color!;
+    Color iconColor() => _iconStyle(tester, Icons.add).color;
     // Default, not disabled.
     expect(iconColor(), equals(defaultColor));
 
@@ -1337,7 +1337,7 @@ void main() {
             final RenderBox labelRenderBox = tester.renderObject<RenderBox>(find.byKey(labelKey));
             final Rect labelBounds = globalBounds(labelRenderBox);
             final RenderBox? iconRenderBox = icon == null ? null : tester.renderObject<RenderBox>(find.byKey(iconKey));
-            final Rect? iconBounds = icon == null ? null : globalBounds(iconRenderBox!);
+            final Rect? iconBounds = icon == null ? null : globalBounds(iconRenderBox);
             final Rect childBounds = icon == null ? labelBounds : labelBounds.expandToInclude(iconBounds!);
 
             // We measure the `InkResponse` descendant of the button
@@ -2232,11 +2232,11 @@ void main() {
               style: ButtonStyle(
                 backgroundBuilder: (BuildContext context, Set<MaterialState> states, Widget? child) {
                   backgroundStates = states;
-                  return child!;
+                  return child;
                 },
                 foregroundBuilder: (BuildContext context, Set<MaterialState> states, Widget? child) {
                   foregroundStates = states;
-                  return child!;
+                  return child;
                 },
               ),
               onPressed: () {},
@@ -2517,5 +2517,5 @@ TextStyle _iconStyle(WidgetTester tester, IconData icon) {
   final RichText iconRichText = tester.widget<RichText>(
     find.descendant(of: find.byIcon(icon), matching: find.byType(RichText)),
   );
-  return iconRichText.text.style!;
+  return iconRichText.text.style;
 }

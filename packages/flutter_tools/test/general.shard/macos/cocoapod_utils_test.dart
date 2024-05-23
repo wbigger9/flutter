@@ -13,7 +13,6 @@ import 'package:flutter_tools/src/macos/cocoapods.dart';
 import 'package:flutter_tools/src/project.dart';
 import 'package:test/fake.dart';
 
-import '../../src/common.dart';
 import '../../src/context.dart';
 
 void main() {

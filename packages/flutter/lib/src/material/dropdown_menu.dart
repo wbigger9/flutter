@@ -685,14 +685,14 @@ class _DropdownMenuState<T> extends State<DropdownMenu<T>> {
     final DropdownMenuThemeData defaults = _DropdownMenuDefaultsM3(context);
 
     if (_enableFilter) {
-      filteredEntries = filter(widget.dropdownMenuEntries, _localTextEditingController!);
+      filteredEntries = filter(widget.dropdownMenuEntries, _localTextEditingController);
     }
 
     if (widget.enableSearch) {
       if (widget.searchCallback != null) {
         currentHighlight = widget.searchCallback!.call(filteredEntries, _localTextEditingController!.text);
       } else {
-        currentHighlight = search(filteredEntries, _localTextEditingController!);
+        currentHighlight = search(filteredEntries, _localTextEditingController);
       }
       if (currentHighlight != null) {
         scrollToHighlight();

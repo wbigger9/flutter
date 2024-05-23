@@ -6,7 +6,6 @@ import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
 import 'base/common.dart';
-import 'base/file_system.dart';
 
 /// Placeholder for base href
 const String kBaseHrefPlaceholder = r'$FLUTTER_BASE_HREF';
