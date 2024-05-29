@@ -840,7 +840,7 @@ class CachedArtifacts implements Artifacts {
         if (mode == BuildMode.debug || mode == null) {
           return _fileSystem.path.join(engineDir, platformName);
         }
-        final String suffix = mode != BuildMode.debug ? '-${snakeCase(mode.cliName, '-')}' : '';
+        final String suffix = mode != BuildMode.debug ? '-${kebabCase(mode.cliName)}' : '';
         return _fileSystem.path.join(engineDir, platformName + suffix);
       case TargetPlatform.fuchsia_arm64:
       case TargetPlatform.fuchsia_x64:
@@ -854,7 +854,7 @@ class CachedArtifacts implements Artifacts {
       case TargetPlatform.android_x64:
       case TargetPlatform.android_x86:
         assert(mode != null, 'Need to specify a build mode for platform $platform.');
-        final String suffix = mode != BuildMode.debug ? '-${snakeCase(mode!.cliName, '-')}' : '';
+        final String suffix = mode != BuildMode.debug ? '-${kebabCase(mode!.cliName)}' : '';
         return _fileSystem.path.join(engineDir, platformName + suffix);
       case TargetPlatform.android:
         assert(false, 'cannot use TargetPlatform.android to look up artifacts');
