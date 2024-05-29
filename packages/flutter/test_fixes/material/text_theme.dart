@@ -68,7 +68,7 @@ void main() {
     subtitle1: subtitle1Style,
     subtitle2: subtitle2Style,
     bodyText1: bodyText1Style,
-    bodyText2: bodyText2Style,
+    bodyMedium: bodyMediumStyle,
     caption: captionStyle,
     button: buttonStyle,
     overline: overlineStyle,
@@ -86,7 +86,7 @@ void main() {
     subtitle1: subtitle1Style,
     subtitle2: subtitle2Style,
     bodyText1: bodyText1Style,
-    bodyText2: bodyText2Style,
+    bodyMedium: bodyMediumStyle,
     caption: captionStyle,
     button: buttonStyle,
     overline: overlineStyle,
@@ -104,7 +104,7 @@ void main() {
   style = textTheme.subtitle1;
   style = textTheme.subtitle2;
   style = textTheme.bodyText1;
-  style = textTheme.bodyText2;
+  style = textTheme.bodyMedium;
   style = textTheme.caption;
   style = textTheme.button;
   style = textTheme.overline;

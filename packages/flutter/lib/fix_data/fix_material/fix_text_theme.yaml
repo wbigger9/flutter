@@ -115,7 +115,7 @@ transforms:
         newName: 'bodyText1'
 
   # Changes made in https://github.com/flutter/flutter/pull/48547
-  - title: "Rename to 'bodyText2'"
+  - title: "Rename to 'bodyMedium'"
     date: 2020-01-24
     element:
       uris: [ 'material.dart' ]
@@ -123,7 +123,7 @@ transforms:
       inClass: 'TextTheme'
     changes:
       - kind: 'rename'
-        newName: 'bodyText2'
+        newName: 'bodyMedium'
 
   # Changes made in https://github.com/flutter/flutter/pull/48547
   - title: "Rename to 'subtitle2'"
@@ -173,7 +173,7 @@ transforms:
         newName: 'bodyText1'
       - kind: 'renameParameter'
         oldName: 'body1'
-        newName: 'bodyText2'
+        newName: 'bodyMedium'
 
   # Changes made in https://github.com/flutter/flutter/pull/48547
   - title: 'Rename arguments'
@@ -212,7 +212,7 @@ transforms:
         newName: 'bodyText1'
       - kind: 'renameParameter'
         oldName: 'body1'
-        newName: 'bodyText2'
+        newName: 'bodyMedium'
 
   # Changes made in https://github.com/flutter/flutter/pull/109817
   - title: "Rename to 'displayLarge'"
@@ -318,7 +318,7 @@ transforms:
     date: 2022-08-18
     element:
       uris: [ 'material.dart' ]
-      getter: bodyText2
+      getter: bodyMedium
       inClass: 'TextTheme'
     changes:
       - kind: 'rename'
@@ -393,7 +393,7 @@ transforms:
         oldName: 'bodyText1'
         newName: 'bodyLarge'
       - kind: 'renameParameter'
-        oldName: 'bodyText2'
+        oldName: 'bodyMedium'
         newName: 'bodyMedium'
       - kind: 'renameParameter'
         oldName: 'caption'
@@ -441,7 +441,7 @@ transforms:
         oldName: 'bodyText1'
         newName: 'bodyLarge'
       - kind: 'renameParameter'
-        oldName: 'bodyText2'
+        oldName: 'bodyMedium'
         newName: 'bodyMedium'
       - kind: 'renameParameter'
         oldName: 'caption'

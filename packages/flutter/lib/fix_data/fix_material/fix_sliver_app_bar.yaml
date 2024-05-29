@@ -95,7 +95,7 @@ transforms:
       name: 'toolbarTextStyle'
       style: optional_named
       argumentValue:
-        expression: '{% textTheme %}.bodyText2'
+        expression: '{% textTheme %}.bodyMedium'
         requiredIf: "textTheme != ''"
     - kind: 'addParameter'
       index: 33
