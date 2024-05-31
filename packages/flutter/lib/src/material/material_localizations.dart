@@ -1001,7 +1001,7 @@ class DefaultMaterialLocalizations implements MaterialLocalizations {
     return switch (timeOfDay.period) {
       DayPeriod.am => anteMeridiemAbbreviation,
       DayPeriod.pm => postMeridiemAbbreviation,
-    };
+    }
   }
 
   @override
@@ -1137,7 +1137,7 @@ class DefaultMaterialLocalizations implements MaterialLocalizations {
       0 => 'No licenses.',
       1 => '1 license.',
       _ => '$licenseCount licenses.',
-    };
+    }
   }
 
   @override
@@ -1163,7 +1163,7 @@ class DefaultMaterialLocalizations implements MaterialLocalizations {
       0 => 'No items selected',
       1 => '1 item selected',
       _ => '$selectedRowCount items selected',
-    };
+    }
   }
 
   @override
@@ -1310,7 +1310,7 @@ class DefaultMaterialLocalizations implements MaterialLocalizations {
       0 => 'No characters remaining',
       1 => '1 character remaining',
       _ => '$remaining characters remaining',
-    };
+    }
   }
 
   @override

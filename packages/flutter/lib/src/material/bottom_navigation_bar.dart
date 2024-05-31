@@ -561,7 +561,7 @@ class _BottomNavigationTile extends StatelessWidget {
     size = switch (type) {
       BottomNavigationBarType.fixed => 1,
       BottomNavigationBarType.shifting => (flex! * 1000.0).round(),
-    };
+    }
 
     Widget result = InkResponse(
       onTap: onTap,
@@ -862,7 +862,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with TickerPr
     return switch (_effectiveType) {
       BottomNavigationBarType.shifting => false,
       BottomNavigationBarType.fixed    => true,
-    };
+    }
   }
 
   @override
@@ -967,7 +967,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with TickerPr
     final Color themeColor = switch (themeData.brightness) {
       Brightness.light => themeData.colorScheme.primary,
       Brightness.dark  => themeData.colorScheme.secondary,
-    };
+    }
 
     final TextStyle effectiveSelectedLabelStyle =
       _effectiveTextStyle(
@@ -1133,7 +1133,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with TickerPr
     final Color? backgroundColor = switch (_effectiveType) {
       BottomNavigationBarType.fixed    => widget.backgroundColor ?? bottomTheme.backgroundColor,
       BottomNavigationBarType.shifting => _backgroundColor,
-    };
+    }
 
     return Semantics(
       explicitChildNodes: true,
@@ -1302,7 +1302,7 @@ class _RadialPainter extends CustomPainter {
       final double leftFraction = switch (textDirection) {
         TextDirection.rtl => 1.0 - circle.horizontalLeadingOffset,
         TextDirection.ltr => circle.horizontalLeadingOffset,
-      };
+      }
       final Offset center = Offset(leftFraction * size.width, size.height / 2.0);
       final Tween<double> radiusTween = Tween<double>(
         begin: 0.0,

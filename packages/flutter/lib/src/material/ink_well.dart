@@ -987,7 +987,7 @@ class _InkResponseState extends State<_InkResponseStateWidget>
             _HighlightType.pressed => widget.highlightColor ?? Theme.of(context).highlightColor,
             _HighlightType.focus => widget.focusColor ?? Theme.of(context).focusColor,
             _HighlightType.hover => widget.hoverColor ?? Theme.of(context).hoverColor,
-          };
+          }
         final RenderBox referenceBox = context.findRenderObject()! as RenderBox;
         _highlights[type] = InkHighlight(
           controller: Material.of(context),
@@ -1090,14 +1090,14 @@ class _InkResponseState extends State<_InkResponseStateWidget>
     return switch (MediaQuery.maybeNavigationModeOf(context)) {
       NavigationMode.traditional || null => enabled && _hasFocus,
       NavigationMode.directional => _hasFocus,
-    };
+    }
   }
 
   void updateFocusHighlights() {
     final bool showFocus = switch (FocusManager.instance.highlightMode) {
       FocusHighlightMode.touch => false,
       FocusHighlightMode.traditional => _shouldShowFocus,
-    };
+    }
     updateHighlight(_HighlightType.focus, value: showFocus);
   }
 
@@ -1273,7 +1273,7 @@ class _InkResponseState extends State<_InkResponseStateWidget>
     return switch (MediaQuery.maybeNavigationModeOf(context)) {
       NavigationMode.traditional || null => enabled && widget.canRequestFocus,
       NavigationMode.directional => true,
-    };
+    }
   }
 
   @override
@@ -1294,7 +1294,7 @@ class _InkResponseState extends State<_InkResponseStateWidget>
         _HighlightType.pressed => widget.overlayColor?.resolve(pressed) ?? widget.highlightColor ?? theme.highlightColor,
         _HighlightType.focus   => widget.overlayColor?.resolve(focused) ?? widget.focusColor ?? theme.focusColor,
         _HighlightType.hover   => widget.overlayColor?.resolve(hovered) ?? widget.hoverColor ?? theme.hoverColor,
-      };
+      }
     }
     for (final _HighlightType type in _highlights.keys) {
       _highlights[type]?.color = getHighlightColorForType(type);

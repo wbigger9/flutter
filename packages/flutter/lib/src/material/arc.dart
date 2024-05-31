@@ -284,7 +284,7 @@ class MaterialRectArcTween extends RectTween {
       _CornerId.topRight    => rect.topRight,
       _CornerId.bottomLeft  => rect.bottomLeft,
       _CornerId.bottomRight => rect.bottomRight,
-    };
+    }
   }
 
   /// The path of the corresponding [begin], [end] rectangle corners that lead

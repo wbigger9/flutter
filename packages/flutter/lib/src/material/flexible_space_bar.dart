@@ -188,7 +188,7 @@ class _FlexibleSpaceBarState extends State<FlexibleSpaceBar> {
     return widget.centerTitle ?? switch (theme.platform) {
       TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.linux || TargetPlatform.windows => false,
       TargetPlatform.iOS || TargetPlatform.macOS => true,
-    };
+    }
   }
 
   Alignment _getTitleAlignment(bool effectiveCenterTitle) {
@@ -198,7 +198,7 @@ class _FlexibleSpaceBarState extends State<FlexibleSpaceBar> {
     return switch (Directionality.of(context)) {
       TextDirection.rtl => Alignment.bottomRight,
       TextDirection.ltr => Alignment.bottomLeft,
-    };
+    }
   }
 
   double _getCollapsePadding(double t, FlexibleSpaceBarSettings settings) {

@@ -325,7 +325,7 @@ class _CupertinoSwitchState extends State<CupertinoSwitch> with TickerProviderSt
       _positionController.value += switch (Directionality.of(context)) {
         TextDirection.rtl => -delta,
         TextDirection.ltr =>  delta,
-      };
+      }
     }
   }
 
@@ -677,7 +677,7 @@ class _RenderCupertinoSwitch extends RenderConstrainedBox {
     final double visualPosition = switch (textDirection) {
       TextDirection.rtl => 1.0 - currentValue,
       TextDirection.ltr => currentValue,
-    };
+    }
 
     final Paint paint = Paint()
       ..color = Color.lerp(trackColor, activeColor, currentValue);
@@ -704,7 +704,7 @@ class _RenderCupertinoSwitch extends RenderConstrainedBox {
     }
 
     if (_onOffLabelColors != null) {
-      final (Color onLabelColor, Color offLabelColor) = onOffLabelColors!;
+      final (Color onLabelColor, Color offLabelColor) = onOffLabelColors;
 
       final double leftLabelOpacity = visualPosition * (1.0 - currentReactionValue);
       final double rightLabelOpacity = (1.0 - visualPosition) * (1.0 - currentReactionValue);
@@ -712,7 +712,7 @@ class _RenderCupertinoSwitch extends RenderConstrainedBox {
           switch (textDirection) {
         TextDirection.ltr => (leftLabelOpacity, rightLabelOpacity),
         TextDirection.rtl => (rightLabelOpacity, leftLabelOpacity),
-      };
+      }
 
       final (Offset onLabelOffset, Offset offLabelOffset) =
           switch (textDirection) {
@@ -724,7 +724,7 @@ class _RenderCupertinoSwitch extends RenderConstrainedBox {
             trackRect.centerRight.translate(-_kOnLabelPaddingHorizontal, 0),
             trackRect.centerLeft.translate(_kOffLabelPaddingHorizontal, 0),
           ),
-      };
+      }
 
       // Draws '|' label
       final Rect onLabelRect = Rect.fromCenter(

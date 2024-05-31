@@ -245,7 +245,7 @@ class ButtonThemeData with Diagnosticable {
       ButtonTextTheme.normal  => const EdgeInsets.symmetric(horizontal: 16.0),
       ButtonTextTheme.accent  => const EdgeInsets.symmetric(horizontal: 16.0),
       ButtonTextTheme.primary => const EdgeInsets.symmetric(horizontal: 24.0),
-    };
+    }
   }
   final EdgeInsetsGeometry? _padding;
 
@@ -269,7 +269,7 @@ class ButtonThemeData with Diagnosticable {
         const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(2.0))),
       ButtonTextTheme.primary =>
         const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4.0))),
-    };
+    }
   }
   final ShapeBorder? _shape;
 
@@ -621,7 +621,7 @@ class ButtonThemeData with Diagnosticable {
       ButtonTextTheme.normal  => const EdgeInsets.symmetric(horizontal: 16.0),
       ButtonTextTheme.accent  => const EdgeInsets.symmetric(horizontal: 16.0),
       ButtonTextTheme.primary => const EdgeInsets.symmetric(horizontal: 24.0),
-    };
+    }
   }
 
   /// The shape of the [button]'s [Material].

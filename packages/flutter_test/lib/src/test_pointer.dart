@@ -100,11 +100,11 @@ class TestPointer {
       _buttons = buttons;
     }
     switch (event.runtimeType) {
-      case const (PointerDownEvent):
+      case PointerDownEvent:
         assert(!isDown);
         _isDown = true;
-      case const (PointerUpEvent):
-      case const (PointerCancelEvent):
+      case PointerUpEvent:
+      case PointerCancelEvent:
         assert(isDown);
         _isDown = false;
       default:

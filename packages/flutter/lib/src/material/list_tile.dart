@@ -132,7 +132,7 @@ enum ListTileTitleAlignment {
       ListTileTitleAlignment.top => listTile.minVerticalPadding,
       ListTileTitleAlignment.center => (tileHeight - childHeight) / 2.0,
       ListTileTitleAlignment.bottom => tileHeight - childHeight - listTile.minVerticalPadding,
-    };
+    }
   }
 }
 
@@ -1051,7 +1051,7 @@ class _ListTile extends SlottedMultiChildRenderObjectWidget<_ListTileSlot, Rende
       _ListTileSlot.title    => title,
       _ListTileSlot.subtitle => subtitle,
       _ListTileSlot.trailing => trailing,
-    };
+    }
   }
 
   @override
@@ -1282,11 +1282,11 @@ class _RenderListTile extends RenderBox with SlottedContainerRenderObjectMixin<_
   // The target tile height to use if _minTileHeight is not specified.
   double get _defaultTileHeight {
    final Offset baseDensity = visualDensity.baseSizeAdjustment;
-    return baseDensity.dy + switch ((isThreeLine, subtitle != null)) {
+    return baseDensity.dy + switch (isThreeLine, subtitle != null) {
       (true, _) => isDense ? 76.0 : 88.0,      // 3 lines,
       (false, true) => isDense ? 64.0 : 72.0,  // 2 lines
       (false, false) => isDense ? 48.0 : 56.0, // 1 line,
-    };
+    }
   }
 
   double get _targetTileHeight => _minTileHeight ?? _defaultTileHeight;
@@ -1377,7 +1377,7 @@ class _RenderListTile extends RenderBox with SlottedContainerRenderObjectMixin<_
     final bool isLTR = switch (textDirection) {
       TextDirection.ltr => true,
       TextDirection.rtl => false,
-    };
+    }
 
     final double titleY;
     final double tileHeight;
@@ -1429,7 +1429,7 @@ class _RenderListTile extends RenderBox with SlottedContainerRenderObjectMixin<_
       }
     }
 
-    return (titleY: titleY, textConstraints: textConstraints, tileSize: Size(tileWidth, tileHeight));
+    return titleY: titleY, textConstraints: textConstraints, tileSize: Size(tileWidth, tileHeight);
   }
 
   @override
@@ -1527,7 +1527,7 @@ class _LisTileDefaultsM2 extends ListTileThemeData {
     return switch (style!) {
       ListTileStyle.drawer => _textTheme.bodyLarge,
       ListTileStyle.list   => _textTheme.titleMedium,
-    };
+    }
   }
 
   @override
@@ -1548,7 +1548,7 @@ class _LisTileDefaultsM2 extends ListTileThemeData {
       Brightness.light => Colors.black45,
       // null -> use current icon theme color
       Brightness.dark => null,
-    };
+    }
   }
 }
 

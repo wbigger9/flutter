@@ -568,7 +568,7 @@ class Switch extends StatelessWidget {
     return switch (effectiveMaterialTapTargetSize) {
       MaterialTapTargetSize.padded     => Size(switchConfig.switchWidth, switchConfig.switchHeight),
       MaterialTapTargetSize.shrinkWrap => Size(switchConfig.switchWidth, switchConfig.switchHeightCollapsed),
-    };
+    }
   }
 
   @override
@@ -818,7 +818,7 @@ class _MaterialSwitchState extends State<_MaterialSwitch> with TickerProviderSta
       positionController.value += switch (Directionality.of(context)) {
         TextDirection.rtl => -delta,
         TextDirection.ltr =>  delta,
-      };
+      }
     }
   }
 
@@ -1428,7 +1428,7 @@ class _SwitchPainter extends ToggleablePainter {
     final double visualPosition = switch (textDirection) {
       TextDirection.rtl => 1.0 - currentValue,
       TextDirection.ltr => currentValue,
-    };
+    }
     if (reaction.status == AnimationStatus.reverse && !_stopPressAnimation) {
       _stopPressAnimation = true;
     } else {

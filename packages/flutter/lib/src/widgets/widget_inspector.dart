@@ -1683,7 +1683,7 @@ mixin WidgetInspectorService {
       _ => throw FlutterError.fromParts(<DiagnosticsNode>[
         ErrorSummary('Cannot get parent chain for node of type ${value.runtimeType}'),
       ]),
-    };
+    }
 
     InspectorSerializationDelegate createDelegate() =>
         InspectorSerializationDelegate(groupName: groupName, service: this);

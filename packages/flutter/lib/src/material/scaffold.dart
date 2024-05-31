@@ -1193,7 +1193,7 @@ class _ScaffoldLayout extends MultiChildLayoutDelegate {
         || FloatingActionButtonLocation.miniEndDocked
         || FloatingActionButtonLocation.miniEndFloat => true,
         FloatingActionButtonLocation() => true,
-      };
+      }
       if (floatingActionButtonRect.size != Size.zero && isSnackBarFloating && showAboveFab) {
         if (bottomNavigationBarTop != null) {
           snackBarYOffsetBase = math.min(bottomNavigationBarTop, floatingActionButtonRect.top);

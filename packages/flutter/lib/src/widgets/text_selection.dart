@@ -971,7 +971,7 @@ class TextSelectionOverlay {
     return switch (textDirection) {
       TextDirection.ltr => ltrType,
       TextDirection.rtl => rtlType,
-    };
+    }
   }
 }
 
@@ -2553,7 +2553,7 @@ class TextSelectionGestureDetectorBuilder {
       final Offset scrollableOffset = switch (axisDirectionToAxis(_scrollDirection ?? AxisDirection.left)) {
         Axis.horizontal => Offset(_scrollPosition - _dragStartScrollOffset, 0.0),
         Axis.vertical   => Offset(0.0, _scrollPosition - _dragStartScrollOffset),
-      };
+      }
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
         case TargetPlatform.macOS:
@@ -2883,7 +2883,7 @@ class TextSelectionGestureDetectorBuilder {
       final Offset scrollableOffset = switch (axisDirectionToAxis(_scrollDirection ?? AxisDirection.left)) {
         Axis.horizontal => Offset(_scrollPosition - _dragStartScrollOffset, 0.0),
         Axis.vertical   => Offset(0.0, _scrollPosition - _dragStartScrollOffset),
-      };
+      }
       final Offset dragStartGlobalPosition = details.globalPosition - details.offsetFromOrigin;
 
       // Select word by word.

@@ -79,7 +79,7 @@ class DecoratedSliver extends SingleChildRenderObjectWidget {
     final String label = switch (position) {
       DecorationPosition.background => 'bg',
       DecorationPosition.foreground => 'fg',
-    };
+    }
     properties.add(EnumProperty<DecorationPosition>('position', position, level: DiagnosticLevel.hidden));
     properties.add(DiagnosticsProperty<Decoration>(label, decoration));
   }

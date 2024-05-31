@@ -277,11 +277,11 @@ class BorderSide with Diagnosticable {
     final Color colorA = switch (a.style) {
       BorderStyle.solid => a.color,
       BorderStyle.none  => a.color.withAlpha(0x00),
-    };
+    }
     final Color colorB = switch (b.style) {
       BorderStyle.solid => b.color,
       BorderStyle.none  => b.color.withAlpha(0x00),
-    };
+    }
     if (a.strokeAlign != b.strokeAlign) {
       return BorderSide(
         color: Color.lerp(colorA, colorB, t),

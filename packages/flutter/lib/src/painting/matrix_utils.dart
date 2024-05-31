@@ -504,10 +504,10 @@ abstract final class MatrixUtils {
 
     // Model matrix by first translating the object from the origin of the world
     // by radius in the z axis and then rotating against the world.
-    result = result * (switch (orientation) {
+    result = result * switch (orientation) {
         Axis.horizontal => Matrix4.rotationY(angle),
         Axis.vertical   => Matrix4.rotationX(angle),
-      } * Matrix4.translationValues(0.0, 0.0, radius)) as Matrix4;
+      } * Matrix4.translationValues(0.0, 0.0, radius) as Matrix4;
 
     // Essentially perspective * view * model.
     return result;

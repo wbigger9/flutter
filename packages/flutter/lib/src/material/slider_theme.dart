@@ -1600,7 +1600,7 @@ class RectangularSliderTrackShape extends SliderTrackShape with BaseSliderTrackS
     final (Paint leftTrackPaint, Paint rightTrackPaint) = switch (textDirection) {
       TextDirection.ltr => (activePaint, inactivePaint),
       TextDirection.rtl => (inactivePaint, activePaint),
-    };
+    }
 
     final Rect trackRect = getPreferredRect(
       parentBox: parentBox,
@@ -1622,7 +1622,7 @@ class RectangularSliderTrackShape extends SliderTrackShape with BaseSliderTrackS
     final bool showSecondaryTrack = secondaryOffset != null && switch (textDirection) {
       TextDirection.rtl => secondaryOffset.dx < thumbCenter.dx,
       TextDirection.ltr => secondaryOffset.dx > thumbCenter.dx,
-    };
+    }
 
     if (showSecondaryTrack) {
       final ColorTween secondaryTrackColorTween = ColorTween(begin: sliderTheme.disabledSecondaryActiveTrackColor, end: sliderTheme.secondaryActiveTrackColor);
@@ -1630,7 +1630,7 @@ class RectangularSliderTrackShape extends SliderTrackShape with BaseSliderTrackS
       final Rect secondaryTrackSegment = switch (textDirection) {
         TextDirection.rtl => Rect.fromLTRB(secondaryOffset.dx, trackRect.top, thumbCenter.dx, trackRect.bottom),
         TextDirection.ltr => Rect.fromLTRB(thumbCenter.dx, trackRect.top, secondaryOffset.dx, trackRect.bottom),
-      };
+      }
       if (!secondaryTrackSegment.isEmpty) {
         context.canvas.drawRect(secondaryTrackSegment, secondaryTrackPaint);
       }
@@ -1703,7 +1703,7 @@ class RoundedRectSliderTrackShape extends SliderTrackShape with BaseSliderTrackS
     final (Paint leftTrackPaint, Paint rightTrackPaint) = switch (textDirection) {
       TextDirection.ltr => (activePaint, inactivePaint),
       TextDirection.rtl => (inactivePaint, activePaint),
-    };
+    }
 
     final Rect trackRect = getPreferredRect(
       parentBox: parentBox,
@@ -1884,7 +1884,7 @@ class RectangularRangeSliderTrackShape extends RangeSliderTrackShape with BaseRa
     final (Offset leftThumbOffset, Offset rightThumbOffset) = switch (textDirection) {
       TextDirection.ltr => (startThumbCenter, endThumbCenter),
       TextDirection.rtl => (endThumbCenter, startThumbCenter),
-    };
+    }
 
     final Rect trackRect = getPreferredRect(
       parentBox: parentBox,
@@ -1984,7 +1984,7 @@ class RoundedRectRangeSliderTrackShape extends RangeSliderTrackShape with BaseRa
     final (Offset leftThumbOffset, Offset rightThumbOffset) = switch (textDirection) {
       TextDirection.ltr => (startThumbCenter, endThumbCenter),
       TextDirection.rtl => (endThumbCenter, startThumbCenter),
-    };
+    }
     final Size thumbSize = sliderTheme.rangeThumbShape!.getPreferredSize(isEnabled, isDiscrete);
     final double thumbRadius = thumbSize.width / 2;
     assert(thumbRadius > 0);
@@ -2099,7 +2099,7 @@ class RoundSliderTickMarkShape extends SliderTickMarkShape {
       TextDirection.ltr when xOffset > 0 => (sliderTheme.disabledInactiveTickMarkColor, sliderTheme.inactiveTickMarkColor),
       TextDirection.rtl when xOffset < 0 => (sliderTheme.disabledInactiveTickMarkColor, sliderTheme.inactiveTickMarkColor),
       TextDirection.ltr || TextDirection.rtl => (sliderTheme.disabledActiveTickMarkColor, sliderTheme.activeTickMarkColor),
-    };
+    }
     final Paint paint = Paint()..color = ColorTween(begin: begin, end: end).evaluate(enableAnimation);
 
     // The tick marks are tiny circles that are the same height as the track.
@@ -2174,7 +2174,7 @@ class RoundRangeSliderTickMarkShape extends RangeSliderTickMarkShape {
     final bool isBetweenThumbs = switch (textDirection) {
       TextDirection.ltr => startThumbCenter.dx < center.dx && center.dx < endThumbCenter.dx,
       TextDirection.rtl => endThumbCenter.dx < center.dx && center.dx < startThumbCenter.dx,
-    };
+    }
     final Color? begin = isBetweenThumbs ? sliderTheme.disabledActiveTickMarkColor : sliderTheme.disabledInactiveTickMarkColor;
     final Color? end = isBetweenThumbs ? sliderTheme.activeTickMarkColor : sliderTheme.inactiveTickMarkColor;
     final Paint paint = Paint()..color = ColorTween(begin: begin, end: end).evaluate(enableAnimation);
@@ -3165,7 +3165,7 @@ class _PaddleSliderValueIndicatorPathPainter {
     assert(!_debuggingLabelLocation || () {
       const Offset leftCenter = _topLobeCenter - Offset(leftWidthNeeded, 0.0) + neckStretch;
       const Offset rightCenter = _topLobeCenter + Offset(rightWidthNeeded, 0.0) + neckStretch;
-      final Rect valueRect = Rect.fromLTRB(
+      const Rect valueRect = Rect.fromLTRB(
         leftCenter.dx - _topLobeRadius,
         leftCenter.dy - _topLobeRadius,
         rightCenter.dx + _topLobeRadius,

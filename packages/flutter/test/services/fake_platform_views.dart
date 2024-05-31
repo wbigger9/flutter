@@ -197,7 +197,7 @@ class FakeAndroidPlatformViewsController {
       'clearFocus'   => _clearFocus(call),
       'offset'       => _offset(call),
       _ => Future<dynamic>.sync(() => null),
-    };
+    }
   }
 
   Future<dynamic> _create(MethodCall call) async {
@@ -399,7 +399,7 @@ class FakeIosPlatformViewsController {
       'acceptGesture' => _acceptGesture(call),
       'rejectGesture' => _rejectGesture(call),
       _ => Future<dynamic>.sync(() => null),
-    };
+    }
   }
 
   Future<dynamic> _create(MethodCall call) async {
@@ -498,7 +498,7 @@ class FakeMacosPlatformViewsController {
       'acceptGesture' => _acceptGesture(call),
       'rejectGesture' => _rejectGesture(call),
       _ => Future<dynamic>.sync(() => null),
-    };
+    }
   }
 
   Future<dynamic> _create(MethodCall call) async {

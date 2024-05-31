@@ -542,7 +542,7 @@ class OutlineInputBorder extends InputBorder {
       final double start = switch (textDirection!) {
         TextDirection.rtl => gapStart + gapPadding - extent,
         TextDirection.ltr => gapStart - gapPadding,
-      };
+      }
       final Path path = _gapBorderPath(canvas, center, math.max(0.0, start), extent);
       canvas.drawPath(path, paint);
     }

@@ -2814,10 +2814,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     final String prevText = span.toPlainText();
     final String currText = textEditingValue.text;
     if (prevText != currText || !selection.isValid || selection.isCollapsed) {
-      return (
+      return 
         startGlyphHeight: renderEditable.preferredLineHeight,
         endGlyphHeight: renderEditable.preferredLineHeight,
-      );
     }
 
     final String selectedGraphemes = selection.textInside(currText);
@@ -2831,10 +2830,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
       start: selection.end - lastSelectedGraphemeExtent,
       end: selection.end,
     ));
-    return (
+    return 
       startGlyphHeight: startCharacterRect?.height ?? renderEditable.preferredLineHeight,
       endGlyphHeight: endCharacterRect?.height ?? renderEditable.preferredLineHeight,
-    );
   }
 
   /// {@template flutter.widgets.EditableText.getAnchors}
@@ -3349,7 +3347,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
         // Only non-null when starting a floating cursor via long press.
         if (point.startLocation != null) {
           shouldResetOrigin = false;
-          (startCaretCenter, currentTextPosition) = point.startLocation!;
+          startCaretCenter, currentTextPosition = point.startLocation;
         } else {
           shouldResetOrigin = true;
           currentTextPosition = TextPosition(offset: renderEditable.selection!.baseOffset, affinity: renderEditable.selection!.affinity);
@@ -4432,11 +4430,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
 
     final InlineSpan inlineSpan = renderEditable.text;
-    final TextScaler effectiveTextScaler = switch ((widget.textScaler, widget.textScaleFactor)) {
+    final TextScaler effectiveTextScaler = switch (widget.textScaler, widget.textScaleFactor) {
       (final TextScaler textScaler, _)     => textScaler,
       (null, final double textScaleFactor) => TextScaler.linear(textScaleFactor),
       (null, null)                         => MediaQuery.textScalerOf(context),
-    };
+    }
 
     final _ScribbleCacheKey newCacheKey = _ScribbleCacheKey(
       inlineSpan: inlineSpan,
@@ -5170,11 +5168,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     super.build(context); // See AutomaticKeepAliveClientMixin.
 
     final TextSelectionControls? controls = widget.selectionControls;
-    final TextScaler effectiveTextScaler = switch ((widget.textScaler, widget.textScaleFactor)) {
+    final TextScaler effectiveTextScaler = switch (widget.textScaler, widget.textScaleFactor) {
       (final TextScaler textScaler, _)     => textScaler,
       (null, final double textScaleFactor) => TextScaler.linear(textScaleFactor),
       (null, null)                         => MediaQuery.textScalerOf(context),
-    };
+    }
 
     return _CompositionCallback(
       compositeCallback: _compositeCallback,

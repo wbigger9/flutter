@@ -41,7 +41,7 @@ abstract class RenderSliverEdgeInsetsPadding extends RenderSliver with RenderObj
       AxisDirection.right => resolvedPadding!.left,
       AxisDirection.down  => resolvedPadding!.top,
       AxisDirection.left  => resolvedPadding!.right,
-    };
+    }
   }
 
   /// The padding in the scroll direction on the side furthest from the 0.0 scroll offset.
@@ -55,7 +55,7 @@ abstract class RenderSliverEdgeInsetsPadding extends RenderSliver with RenderObj
       AxisDirection.right => resolvedPadding!.right,
       AxisDirection.down  => resolvedPadding!.bottom,
       AxisDirection.left  => resolvedPadding!.left,
-    };
+    }
   }
 
   /// The total padding in the [SliverConstraints.axisDirection]. (In other
@@ -80,7 +80,7 @@ abstract class RenderSliverEdgeInsetsPadding extends RenderSliver with RenderObj
     return switch (constraints.axis) {
       Axis.horizontal => resolvedPadding!.vertical,
       Axis.vertical => resolvedPadding!.horizontal,
-    };
+    }
   }
 
   @override
@@ -165,12 +165,12 @@ abstract class RenderSliverEdgeInsetsPadding extends RenderSliver with RenderObj
       AxisDirection.left  => paintOffset(from: resolvedPadding.right + scrollExtent, to: resolvedPadding.horizontal + scrollExtent),
       AxisDirection.right => paintOffset(from: 0.0, to: resolvedPadding.left),
       AxisDirection.down  => paintOffset(from: 0.0, to: resolvedPadding.top),
-    };
+    }
     final SliverPhysicalParentData childParentData = child!.parentData! as SliverPhysicalParentData;
     childParentData.paintOffset = switch (constraints.axis) {
       Axis.horizontal => Offset(calculatedOffset, resolvedPadding.top),
       Axis.vertical   => Offset(resolvedPadding.left, calculatedOffset),
-    };
+    }
     assert(beforePadding == this.beforePadding);
     assert(afterPadding == this.afterPadding);
     assert(mainAxisPadding == this.mainAxisPadding);
@@ -206,7 +206,7 @@ abstract class RenderSliverEdgeInsetsPadding extends RenderSliver with RenderObj
     return switch (constraints.axis) {
       Axis.horizontal => resolvedPadding!.top,
       Axis.vertical   => resolvedPadding!.left,
-    };
+    }
   }
 
   @override

@@ -102,7 +102,7 @@ class UndoManager {
       'undo' => UndoDirection.undo,
       'redo' => UndoDirection.redo,
       _ => throw FlutterError.fromParts(<DiagnosticsNode>[ErrorSummary('Unknown undo direction: $direction')]),
-    };
+    }
   }
 }
 

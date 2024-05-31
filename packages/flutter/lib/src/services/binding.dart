@@ -338,7 +338,7 @@ mixin ServicesBinding on BindingBase, SchedulerBinding {
       AppLifecycleState.inactive => ending == AppLifecycleState.resumed || ending == AppLifecycleState.hidden,
       AppLifecycleState.hidden   => ending == AppLifecycleState.paused  || ending == AppLifecycleState.inactive,
       AppLifecycleState.paused   => ending == AppLifecycleState.hidden  || ending == AppLifecycleState.detached,
-    };
+    }
   }
 
 
@@ -399,7 +399,7 @@ mixin ServicesBinding on BindingBase, SchedulerBinding {
       'AppLifecycleState.paused'   => AppLifecycleState.paused,
       'AppLifecycleState.detached' => AppLifecycleState.detached,
       _ => null,
-    };
+    }
   }
 
   /// Handles any requests for application exit that may be received on the

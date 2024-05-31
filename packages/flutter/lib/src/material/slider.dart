@@ -695,7 +695,7 @@ class _SliderState extends State<Slider> with TickerProviderStateMixin {
       _SliderAdjustmentType.down  => false,
       _SliderAdjustmentType.left  => directionality == TextDirection.rtl,
       _SliderAdjustmentType.right => directionality == TextDirection.ltr,
-    };
+    }
 
     final _RenderSlider slider = _renderObjectKey.currentContext!.findRenderObject()! as _RenderSlider;
     return shouldIncrease ? slider.increaseAction() : slider.decreaseAction();
@@ -878,7 +878,7 @@ class _SliderState extends State<Slider> with TickerProviderStateMixin {
     final Map<ShortcutActivator, Intent> shortcutMap = switch (MediaQuery.navigationModeOf(context)) {
       NavigationMode.directional => _directionalNavShortcutMap,
       NavigationMode.traditional => _traditionalNavShortcutMap,
-    };
+    }
 
     final double fontSize = sliderTheme.valueIndicatorTextStyle?.fontSize ?? kDefaultFontSize;
     final double fontSizeToScale = fontSize == 0.0 ? kDefaultFontSize : fontSize;
@@ -1389,7 +1389,7 @@ class _RenderSlider extends RenderBox with RelayoutWhenSystemFontsChangeMixin {
       ShowValueIndicator.onlyForContinuous => !isDiscrete,
       ShowValueIndicator.always => true,
       ShowValueIndicator.never  => false,
-    };
+    }
   }
 
   double get _adjustmentUnit {
@@ -1466,7 +1466,7 @@ class _RenderSlider extends RenderBox with RelayoutWhenSystemFontsChangeMixin {
     return switch (textDirection) {
       TextDirection.rtl => 1.0 - visualPosition,
       TextDirection.ltr => visualPosition,
-    };
+    }
   }
 
   double _getValueFromGlobalPosition(Offset globalPosition) {
@@ -1564,7 +1564,7 @@ class _RenderSlider extends RenderBox with RelayoutWhenSystemFontsChangeMixin {
           _currentDragValue += switch (textDirection) {
             TextDirection.rtl => -valueDelta,
             TextDirection.ltr =>  valueDelta,
-          };
+          }
           onChanged!(_discretize(_currentDragValue));
         }
       case SliderInteraction.tapOnly:
@@ -1642,7 +1642,7 @@ class _RenderSlider extends RenderBox with RelayoutWhenSystemFontsChangeMixin {
       TextDirection.rtl when _secondaryTrackValue == null => (1.0 - controllerValue, null),
       TextDirection.rtl => (1.0 - controllerValue, 1.0 - _secondaryTrackValue!),
       TextDirection.ltr => (controllerValue, _secondaryTrackValue),
-    };
+    }
 
     final Rect trackRect = _sliderTheme.trackShape!.getPreferredRect(
       parentBox: this,

@@ -1734,7 +1734,7 @@ abstract class DiagnosticsNode {
       // Truncate children doesn't really need its own text style as the
       // rendering is quite custom.
       DiagnosticsTreeStyle.truncateChildren => whitespaceTextConfiguration,
-    };
+    }
   }
 
   /// Returns a string representation of this node and its descendants.
@@ -2117,7 +2117,7 @@ class FlagProperty extends DiagnosticsProperty<bool> {
       true when ifTrue != null => ifTrue!,
       false when ifFalse != null => ifFalse!,
       _ => super.valueToString(parentConfiguration: parentConfiguration),
-    };
+    }
   }
 
   @override
@@ -2138,7 +2138,7 @@ class FlagProperty extends DiagnosticsProperty<bool> {
       true  when ifTrue == null => DiagnosticLevel.hidden,
       false when ifFalse == null => DiagnosticLevel.hidden,
       _ => super.level,
-    };
+    }
   }
 }
 

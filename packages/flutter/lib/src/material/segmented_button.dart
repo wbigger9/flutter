@@ -13,7 +13,6 @@ import 'button_style.dart';
 import 'button_style_button.dart';
 import 'color_scheme.dart';
 import 'colors.dart';
-import 'constants.dart';
 import 'icons.dart';
 import 'ink_well.dart';
 import 'material.dart';
@@ -298,7 +297,7 @@ class SegmentedButton<T> extends StatefulWidget {
         : switch (overlayColor) {
             (final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
             _ => _SegmentedButtonDefaultsM3.resolveStateColor(foregroundColor, selectedForegroundColor, overlayColor),
-          };
+          }
     return TextButton.styleFrom(
       textStyle: textStyle,
       shadowColor: shadowColor,
@@ -548,7 +547,7 @@ class SegmentedButtonState<T> extends State<SegmentedButton<T>> {
     final double tapTargetVerticalPadding = switch (resolvedTapTargetSize) {
       MaterialTapTargetSize.shrinkWrap => 0.0,
       MaterialTapTargetSize.padded => max(0, kMinInteractiveDimension + densityAdjustment.dy - effectedButtonHeight)
-    };
+    }
 
     return Material(
       type: MaterialType.transparency,

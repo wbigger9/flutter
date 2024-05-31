@@ -38,7 +38,7 @@ Color _colorFromHue(
     < 240.0 => (0.0, secondary, chroma),
     < 300.0 => (secondary, 0.0, chroma),
     _       => (chroma, 0.0, secondary),
-  };
+  }
   return Color.fromARGB((alpha * 0xFF).round(), ((red + match) * 0xFF).round(), ((green + match) * 0xFF).round(), ((blue + match) * 0xFF).round());
 }
 

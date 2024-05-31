@@ -177,7 +177,7 @@ class _CupertinoScrollbarState extends RawScrollbarState<CupertinoScrollbar> {
     _pressStartAxisPosition = switch (direction) {
       Axis.vertical   => localPosition.dy,
       Axis.horizontal => localPosition.dx,
-    };
+    }
   }
 
   @override
@@ -202,7 +202,7 @@ class _CupertinoScrollbarState extends RawScrollbarState<CupertinoScrollbar> {
     final (double axisPosition, double axisVelocity) = switch (direction) {
       Axis.horizontal => (localPosition.dx, velocity.pixelsPerSecond.dx),
       Axis.vertical   => (localPosition.dy, velocity.pixelsPerSecond.dy),
-    };
+    }
     if (axisPosition != _pressStartAxisPosition && axisVelocity.abs() < 10) {
       HapticFeedback.mediumImpact();
     }

@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'dart:math' as math;
-import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart' show DragStartBehavior;
@@ -513,10 +512,10 @@ class _IndicatorPainter extends CustomPainter {
     assert(tabIndex >= 0);
     assert(tabIndex <= maxTabIndex);
     double tabLeft, tabRight;
-    (tabLeft, tabRight) = switch (_currentTextDirection!) {
+    tabLeft, tabRight = switch (_currentTextDirection!) {
       TextDirection.rtl => (_currentTabOffsets![tabIndex + 1], _currentTabOffsets![tabIndex]),
       TextDirection.ltr => (_currentTabOffsets![tabIndex], _currentTabOffsets![tabIndex + 1]),
-    };
+    }
 
     if (indicatorSize == TabBarIndicatorSize.label) {
       final double tabWidth = tabKeys[tabIndex].currentContext!.size!.width;
@@ -557,7 +556,7 @@ class _IndicatorPainter extends CustomPainter {
       TabBarIndicatorSize.label => _applyStretchEffect(_currentRect),
       // Do nothing.
       TabBarIndicatorSize.tab => _currentRect,
-    };
+    }
 
     assert(_currentRect != null);
 
@@ -1371,7 +1370,7 @@ class _TabBarState extends State<TabBar> {
     final bool primaryWithLabelIndicator = switch (indicatorSize) {
       TabBarIndicatorSize.label  => widget._isPrimary,
       TabBarIndicatorSize.tab    => false,
-    };
+    }
     final BorderRadius? effectiveBorderRadius = theme.useMaterial3 && primaryWithLabelIndicator
       ? BorderRadius.only(
           topLeft: Radius.circular(effectiveIndicatorWeight),
@@ -1555,7 +1554,7 @@ class _TabBarState extends State<TabBar> {
       > 0 when trailingPosition == null => middlePosition,
       < 0 => lerpDouble(middlePosition, leadingPosition, index - value)!,
       _   => lerpDouble(middlePosition, trailingPosition, value - index)!,
-    };
+    }
 
     _scrollController!.jumpTo(offset);
   }
@@ -1810,7 +1809,7 @@ class _TabBarState extends State<TabBar> {
         final AlignmentGeometry effectiveAlignment = switch (effectiveTabAlignment) {
           TabAlignment.center => Alignment.center,
           TabAlignment.start || TabAlignment.startOffset || TabAlignment.fill => AlignmentDirectional.centerStart,
-        };
+        }
 
         final Color dividerColor = widget.dividerColor ?? tabBarTheme.dividerColor ?? _defaults.dividerColor!;
         final double dividerHeight = widget.dividerHeight ?? tabBarTheme.dividerHeight ?? _defaults.dividerHeight!;
@@ -2501,7 +2500,7 @@ class _TabsPrimaryDefaultsM3 extends TabBarTheme {
     return switch (indicatorSize) {
       TabBarIndicatorSize.label => 3.0,
       TabBarIndicatorSize.tab   => 2.0,
-    };
+    }
   }
 
   // TODO(davidmartos96): This value doesn't currently exist in

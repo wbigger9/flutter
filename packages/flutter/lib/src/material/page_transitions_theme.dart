@@ -901,7 +901,7 @@ class _PageTransitionsThemeTransitionsState<T> extends State<_PageTransitionsThe
     final PageTransitionsBuilder matchingBuilder = widget.builders[platform] ?? switch (platform) {
       TargetPlatform.iOS => const CupertinoPageTransitionsBuilder(),
       TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.windows || TargetPlatform.macOS || TargetPlatform.linux => const ZoomPageTransitionsBuilder(),
-    };
+    }
     return matchingBuilder.buildTransitions<T>(
       widget.route,
       context,

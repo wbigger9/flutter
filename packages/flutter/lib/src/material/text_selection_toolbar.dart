@@ -696,14 +696,14 @@ class _TextSelectionToolbarContainer extends StatelessWidget {
     final bool isDefaultSurface = switch (colorScheme.brightness) {
       Brightness.light => identical(ThemeData().colorScheme.surface, colorScheme.surface),
       Brightness.dark => identical(ThemeData.dark().colorScheme.surface, colorScheme.surface),
-    };
+    }
     if (!isDefaultSurface) {
       return colorScheme.surface;
     }
     return switch (colorScheme.brightness) {
       Brightness.light => _defaultColorLight,
       Brightness.dark => _defaultColorDark,
-    };
+    }
   }
 
   @override

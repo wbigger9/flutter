@@ -1470,11 +1470,11 @@ void main() {
       await tester.pumpAndSettle();
     }
     final List<(int,int)> testCases = <(int,int)>[
-      (3, 1),
-      (3, 3),
-      (3, 5),
-      (0, 5),
-      (5, 0),
+      3, 1,
+      3, 3,
+      3, 5,
+      0, 5,
+      5, 0,
     ];
     for (final (int, int) element in testCases) {
       await testMove(element.$1, element.$2);

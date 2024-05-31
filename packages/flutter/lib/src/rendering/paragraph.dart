@@ -841,7 +841,7 @@ class RenderParagraph extends RenderBox with ContainerRenderObjectMixin<RenderBo
             final (double fadeStart, double fadeEnd) = switch (textDirection) {
               TextDirection.rtl => (fadeSizePainter.width, 0.0),
               TextDirection.ltr => (size.width - fadeSizePainter.width, size.width),
-            };
+            }
             _overflowShader = ui.Gradient.linear(
               Offset(fadeStart, 0.0),
               Offset(fadeEnd, 0.0),
@@ -2587,7 +2587,7 @@ class _SelectableFragment with Selectable, Diagnosticable, ChangeNotifier implem
         final Offset currentParagraphLocalPosition = MatrixUtils.transformPoint(currentTransform, globalPosition);
         final bool positionWithinCurrentParagraph = current.paintBounds.contains(currentParagraphLocalPosition);
         if (positionWithinCurrentParagraph) {
-          return (paragraph: current, localPosition: currentParagraphLocalPosition);
+          return paragraph: current, localPosition: currentParagraphLocalPosition;
         }
       }
       current = current.parent;
@@ -2701,7 +2701,7 @@ class _SelectableFragment with Selectable, Diagnosticable, ChangeNotifier implem
       start = TextPosition(offset: textBoundary.start);
       end = TextPosition(offset: textBoundary.end, affinity: TextAffinity.upstream);
     }
-    return (boundaryStart: start, boundaryEnd: end);
+    return boundaryStart: start, boundaryEnd: end;
   }
 
   SelectionResult _handleSelectWord(Offset globalPosition) {

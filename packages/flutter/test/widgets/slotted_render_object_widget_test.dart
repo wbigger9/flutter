@@ -293,7 +293,7 @@ class _Diagonal extends RenderObjectWidget with SlottedMultiChildRenderObjectWid
       null => nullSlot,
       _DiagonalSlot.topLeft     => topLeft,
       _DiagonalSlot.bottomRight => bottomRight,
-    };
+    }
   }
 
   @override

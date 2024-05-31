@@ -1104,7 +1104,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField> with Restoratio
       OverlayVisibilityMode.always => true,
       OverlayVisibilityMode.editing => hasText,
       OverlayVisibilityMode.notEditing => !hasText,
-    };
+    }
   }
 
   // True if any surrounding decoration widgets will be shown.
@@ -1204,12 +1204,12 @@ class _CupertinoTextFieldState extends State<CupertinoTextField> with Restoratio
         // Show user specified suffix if applicable and fall back to clear button.
         final bool showUserSuffix = _shouldShowAttachment(attachment: widget.suffixMode, hasText: hasText);
         final bool showClearButton = _shouldShowAttachment(attachment: widget.clearButtonMode, hasText: hasText);
-        final Widget? suffixWidget = switch ((showUserSuffix, showClearButton)) {
+        final Widget? suffixWidget = switch (showUserSuffix, showClearButton) {
           (false, false) => null,
           (true, false) => widget.suffix,
           (true, true) => widget.suffix ?? _buildClearButton(),
           (false, true) => _buildClearButton(),
-        };
+        }
         return Row(children: <Widget>[
           // Insert a prefix at the front if the prefix visibility mode matches
           // the current text state.

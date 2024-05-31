@@ -11,7 +11,6 @@ import 'package:flutter/widgets.dart';
 import 'button_style.dart';
 import 'color_scheme.dart';
 import 'colors.dart';
-import 'constants.dart';
 import 'divider.dart';
 import 'divider_theme.dart';
 import 'icon_button.dart';
@@ -445,7 +444,7 @@ class _SearchAnchorState extends State<SearchAnchor> {
     return widget.isFullScreen ?? switch (Theme.of(context).platform) {
       TargetPlatform.iOS || TargetPlatform.android || TargetPlatform.fuchsia => true,
       TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => false,
-    };
+    }
   }
 
   @override
@@ -1390,11 +1389,11 @@ class _SearchBarState extends State<SearchBar> {
     final Color defaultColor = switch (colorScheme.brightness) {
       Brightness.light => kDefaultIconDarkColor,
       Brightness.dark  => kDefaultIconLightColor,
-    };
+    }
     final IconThemeData? customTheme = switch (IconTheme.of(context)) {
       final IconThemeData iconTheme when iconTheme.color != defaultColor => iconTheme,
       _ => null,
-    };
+    }
 
     Widget? leading;
     if (widget.leading != null) {

@@ -2807,7 +2807,7 @@ void main() {
                   ChildVicinity(xIndex: 1, yIndex: 1) => const ValueKey<int>(1),
                   ChildVicinity(xIndex: 1, yIndex: 2) => const ValueKey<int>(2),
                   _ => null,
-                };
+                }
                 return SizedBox.square(key: key, dimension: 200);
               });
       final TwoDimensionalChildBuilderDelegate delegate2 =
@@ -2853,7 +2853,7 @@ void main() {
                   ChildVicinity(xIndex: 0, yIndex: 0) => const ValueKey<int>(1),
                   ChildVicinity(xIndex: 1, yIndex: 1) => const ValueKey<int>(2),
                   _ => null,
-                };
+                }
                 return Checkbox(key: key, value: false, onChanged: (_) {});
               });
       final TwoDimensionalChildBuilderDelegate delegate2 =

@@ -1280,12 +1280,12 @@ class _CurvedAnimationBuilderState extends State<_CurvedAnimationBuilder> {
       });
     }
     switch (status) {
-      case AnimationStatus.forward || AnimationStatus.reverse when _preservedDirection != null:
-        break;
-      case AnimationStatus.forward || AnimationStatus.reverse:
-        setState(() { _preservedDirection = status; });
-      case AnimationStatus.completed || AnimationStatus.dismissed:
-        setState(() { _preservedDirection = null; });
+      const (case AnimationStatus.forward || AnimationStatus.reverse when _preservedDirection != null:
+        break;)
+      const (case AnimationStatus.forward || AnimationStatus.reverse:
+        setState(() { _preservedDirection = status; });)
+      const (case AnimationStatus.completed || AnimationStatus.dismissed:
+        setState(() { _preservedDirection = null; });)
     }
   }
 

@@ -145,7 +145,7 @@ abstract class TwoDimensionalScrollView extends StatelessWidget {
     ScrollableDetails mainAxisDetails = switch (mainAxis) {
       Axis.vertical => verticalDetails,
       Axis.horizontal => horizontalDetails,
-    };
+    }
 
     final bool effectivePrimary = primary
       ?? mainAxisDetails.controller == null && PrimaryScrollController.shouldInherit(

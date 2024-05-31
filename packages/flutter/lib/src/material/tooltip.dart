@@ -475,15 +475,15 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
   AnimationStatus _animationStatus = AnimationStatus.dismissed;
   void _handleStatusChanged(AnimationStatus status) {
     assert(mounted);
-    switch ((_animationStatus.isDismissed, status.isDismissed)) {
-      case (false, true):
+    switch (_animationStatus.isDismissed, status.isDismissed) {
+      case false, true:
         Tooltip._openedTooltips.remove(this);
         _overlayController.hide();
-      case (true, false):
+      case true, false:
         _overlayController.show();
         Tooltip._openedTooltips.add(this);
         SemanticsService.tooltip(_tooltipMessage);
-      case (true, true) || (false, false):
+      const case (true, true) || (false, false),:
         break;
     }
     _animationStatus = status;
@@ -725,7 +725,7 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.iOS     => 32.0,
-    };
+    }
   }
 
   EdgeInsets _getDefaultPadding() {
@@ -736,7 +736,7 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.iOS     => const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-    };
+    }
   }
 
   static double _getDefaultFontSize(TargetPlatform platform) {
@@ -747,7 +747,7 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.iOS     => 14.0,
-    };
+    }
   }
 
   Widget _buildTooltipOverlay(BuildContext context) {
@@ -767,7 +767,7 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
         textTheme.bodyMedium!.copyWith(color: Colors.white, fontSize: _getDefaultFontSize(platform)),
         BoxDecoration(color: Colors.grey[700]!.withOpacity(0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
       ),
-    };
+    }
 
     final TooltipThemeData tooltipTheme = _tooltipTheme;
     final _TooltipOverlay overlayChild = _TooltipOverlay(

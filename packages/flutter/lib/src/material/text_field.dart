@@ -1103,7 +1103,7 @@ class _TextFieldState extends State<TextField> with RestorationMixin implements 
     return switch (mode) {
       NavigationMode.traditional => widget.canRequestFocus && _isEnabled,
       NavigationMode.directional => true,
-    };
+    }
   }
 
   @override

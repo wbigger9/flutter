@@ -7,9 +7,7 @@ import 'package:flutter/rendering.dart';
 
 import 'adaptive_text_selection_toolbar.dart';
 import 'debug.dart';
-import 'desktop_text_selection.dart';
 import 'magnifier.dart';
-import 'text_selection.dart';
 import 'theme.dart';
 
 /// A widget that introduces an area for user selections with adaptive selection
@@ -120,7 +118,7 @@ class _SelectionAreaState extends State<SelectionArea> {
       TargetPlatform.linux || TargetPlatform.windows   => desktopTextSelectionHandleControls,
       TargetPlatform.iOS                               => cupertinoTextSelectionHandleControls,
       TargetPlatform.macOS                             => cupertinoDesktopTextSelectionHandleControls,
-    };
+    }
     return SelectableRegion(
       selectionControls: controls,
       focusNode: _effectiveFocusNode,

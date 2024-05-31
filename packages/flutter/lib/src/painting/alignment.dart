@@ -541,7 +541,7 @@ class AlignmentDirectional extends AlignmentGeometry {
     return switch (direction!) {
       TextDirection.rtl => Alignment(-start, y),
       TextDirection.ltr => Alignment(start, y),
-    };
+    }
   }
 
   static String _stringify(double start, double y) {
@@ -643,7 +643,7 @@ class _MixedAlignment extends AlignmentGeometry {
     return switch (direction!) {
       TextDirection.rtl => Alignment(_x - _start, _y),
       TextDirection.ltr => Alignment(_x + _start, _y),
-    };
+    }
   }
 }
 

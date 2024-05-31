@@ -561,7 +561,7 @@ class StandardMessageCodec implements MessageCodec<Object?> {
       254 => buffer.getUint16(),
       255 => buffer.getUint32(),
       _ => value,
-    };
+    }
   }
 }
 

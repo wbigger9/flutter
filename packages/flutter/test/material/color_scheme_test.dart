@@ -700,7 +700,7 @@ void main() {
         DynamicSchemeVariant.expressive => SchemeExpressive(sourceColorHct: sourceColor, isDark: false, contrastLevel: 0.0),
         DynamicSchemeVariant.rainbow => SchemeRainbow(sourceColorHct: sourceColor, isDark: false, contrastLevel: 0.0),
         DynamicSchemeVariant.fruitSalad => SchemeFruitSalad(sourceColorHct: sourceColor, isDark: false, contrastLevel: 0.0),
-      };
+      }
       final ColorScheme colorScheme = ColorScheme.fromSeed(
         seedColor: seedColor,
         dynamicSchemeVariant: schemeVariant,

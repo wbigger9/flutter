@@ -1206,7 +1206,7 @@ void main() {
             0 => Plurality.zero,
             1 => Plurality.one,
             _ => Plurality.many,
-          };
+          }
           late final Plurality actual;
           final _FakeFinder finder = _FakeFinder(
             describeMatchCallback: (Plurality plurality) {
@@ -1225,7 +1225,7 @@ void main() {
             0 => Plurality.zero,
             1 => Plurality.one,
             _ => Plurality.many,
-          };
+          }
           late final Plurality actual;
           final _FakeFinder finder = _FakeFinder(
             describeMatchCallback: (Plurality plurality) {
@@ -1437,7 +1437,7 @@ class _FakeFinder extends FinderBase<String> {
     return describeMatchCallback?.call(plurality) ?? switch (plurality) {
       Plurality.one => 'String',
       Plurality.many || Plurality.zero => 'Strings',
-    };
+    }
   }
 
   @override

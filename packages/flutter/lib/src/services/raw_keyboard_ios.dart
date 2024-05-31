@@ -157,7 +157,7 @@ class RawKeyEventDataIos extends RawKeyEventData {
       KeyboardSide.all   => modifiers & leftMask != 0 && modifiers & rightMask != 0,
       KeyboardSide.left  => modifiers & leftMask != 0,
       KeyboardSide.right => modifiers & rightMask != 0,
-    };
+    }
   }
 
   @override

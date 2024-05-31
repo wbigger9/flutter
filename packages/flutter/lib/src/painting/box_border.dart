@@ -999,7 +999,7 @@ class BorderDirectional extends BoxBorder {
     final (BorderSide left, BorderSide right) = switch (textDirection!) {
       TextDirection.rtl => (end, start),
       TextDirection.ltr => (start, end),
-    };
+    }
 
     // Allow painting non-uniform borders if the visible colors are uniform.
     final Set<Color> visibleColors = _distinctVisibleColors();

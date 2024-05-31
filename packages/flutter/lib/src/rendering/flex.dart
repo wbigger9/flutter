@@ -225,7 +225,7 @@ enum MainAxisAlignment {
       MainAxisAlignment.spaceBetween => (0.0,                         freeSpace / (itemCount - 1)),
       MainAxisAlignment.spaceAround =>  (freeSpace / itemCount / 2,   freeSpace / itemCount),
       MainAxisAlignment.spaceEvenly =>  (freeSpace / (itemCount + 1), freeSpace / (itemCount + 1)),
-    };
+    }
   }
 }
 
@@ -319,7 +319,7 @@ enum CrossAxisAlignment {
       CrossAxisAlignment.start  => flipped ? freeSpace : 0.0,
       CrossAxisAlignment.center => freeSpace / 2,
       CrossAxisAlignment.end => CrossAxisAlignment.start._getChildCrossAxisOffset(freeSpace, !flipped),
-    };
+    }
   }
 }
 
@@ -623,7 +623,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
       final bool isHorizontal = switch (direction) {
         Axis.horizontal => true,
         Axis.vertical   => false,
-      };
+      }
 
       Size layoutChild(RenderBox child, BoxConstraints constraints) {
         final double mainAxisSizeFromConstraints = isHorizontal ? constraints.maxWidth : constraints.maxHeight;
@@ -685,7 +685,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
     return switch (_direction) {
       Axis.horizontal => defaultComputeDistanceToHighestActualBaseline(baseline),
       Axis.vertical   => defaultComputeDistanceToFirstActualBaseline(baseline),
-    };
+    }
   }
 
   static int _getFlex(RenderBox child) {
@@ -705,21 +705,21 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
         Axis.vertical => false,
       },
       CrossAxisAlignment.start || CrossAxisAlignment.center || CrossAxisAlignment.end || CrossAxisAlignment.stretch  => false,
-    };
+    }
   }
 
   double _getCrossSize(Size size) {
     return switch (_direction) {
       Axis.horizontal => size.height,
       Axis.vertical => size.width,
-    };
+    }
   }
 
   double _getMainSize(Size size) {
     return switch (_direction) {
       Axis.horizontal => size.width,
       Axis.vertical => size.height,
-    };
+    }
   }
 
   // flipMainAxis is used to decide whether to lay out
@@ -755,7 +755,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
       CrossAxisAlignment.center ||
       CrossAxisAlignment.end ||
       CrossAxisAlignment.baseline => false,
-    };
+    }
     return switch (_direction) {
       Axis.horizontal => fillCrossAxis
         ? BoxConstraints.tightFor(height: constraints.maxHeight)
@@ -763,7 +763,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
       Axis.vertical => fillCrossAxis
         ? BoxConstraints.tightFor(width: constraints.maxWidth)
         : BoxConstraints(maxWidth: constraints.maxWidth),
-    };
+    }
   }
 
   BoxConstraints _constraintsForFlexChild(RenderBox child, BoxConstraints constraints, double maxChildExtent) {
@@ -772,14 +772,14 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
     final double minChildExtent = switch (_getFit(child)) {
       FlexFit.tight => maxChildExtent,
       FlexFit.loose => 0.0,
-    };
+    }
     final bool fillCrossAxis = switch (crossAxisAlignment) {
       CrossAxisAlignment.stretch  => true,
       CrossAxisAlignment.start ||
       CrossAxisAlignment.center ||
       CrossAxisAlignment.end ||
       CrossAxisAlignment.baseline => false,
-    };
+    }
     return switch (_direction) {
       Axis.horizontal => BoxConstraints(
         minWidth: minChildExtent,
@@ -793,7 +793,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
         minHeight: minChildExtent,
         maxHeight: maxChildExtent,
       ),
-    };
+    }
   }
 
   @override
@@ -1017,12 +1017,12 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
     accumulatedSize += switch (accumulatedAscentDescent) {
       null => _AxisSize.empty,
       (final double ascent, final double descent) => _AxisSize(mainAxisExtent: 0, crossAxisExtent: ascent + descent),
-    };
+    }
 
     final double idealMainSize = switch (mainAxisSize) {
       MainAxisSize.max when maxMainSize.isFinite => maxMainSize,
       MainAxisSize.max || MainAxisSize.min => accumulatedSize.mainAxisExtent,
-    };
+    }
 
     final _AxisSize constrainedSize = _AxisSize(mainAxisExtent: idealMainSize, crossAxisExtent: accumulatedSize.crossAxisExtent)
       .applyConstraints(constraints, direction);
@@ -1062,7 +1062,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
     final bool flipMainAxis = _flipMainAxis;
     final bool flipCrossAxis = _flipCrossAxis;
     final (double leadingSpace, double betweenSpace) = mainAxisAlignment._distributeSpace(remainingSpace, childCount, flipMainAxis);
-    final (_NextChild nextChild, RenderBox? topLeftChild) = flipMainAxis ? (childBefore, lastChild) : (childAfter, firstChild);
+    final (_NextChild nextChild, RenderBox? topLeftChild) = flipMainAxis ? childBefore, lastChild : childAfter, firstChild;
     final double? baselineOffset = sizes.baselineOffset;
     assert(baselineOffset == null || (crossAxisAlignment == CrossAxisAlignment.baseline && direction == Axis.horizontal));
 
@@ -1080,7 +1080,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
       childParentData.offset = switch (direction) {
         Axis.horizontal => Offset(childMainPosition, childCrossPosition),
         Axis.vertical => Offset(childCrossPosition, childMainPosition),
-      };
+      }
       childMainPosition += _getMainSize(child.size) + betweenSpace;
     }
   }
@@ -1141,7 +1141,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
       final Rect overflowChildRect = switch (_direction) {
         Axis.horizontal => Rect.fromLTWH(0.0, 0.0, size.width + _overflow, 0.0),
         Axis.vertical   => Rect.fromLTWH(0.0, 0.0, 0.0, size.height + _overflow),
-      };
+      }
       paintOverflowIndicator(context, offset, Offset.zero & size, overflowChildRect, overflowHints: debugOverflowHints);
       return true;
     }());

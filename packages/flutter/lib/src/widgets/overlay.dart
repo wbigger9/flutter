@@ -991,7 +991,7 @@ mixin _RenderTheaterMixin on RenderBox {
       StackParentData(:final double top) => top,
       StackParentData(:final double bottom) => theaterSize.height - bottom - child.getDryLayout(childConstraints).height,
       StackParentData() => alignment.alongOffset(theaterSize - child.getDryLayout(childConstraints) as Offset).dy,
-    };
+    }
     return baselineOffset + y;
   }
 

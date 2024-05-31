@@ -1100,7 +1100,7 @@ class DataTable extends StatelessWidget {
         0 when displayCheckboxColumn && checkboxHorizontalMargin == null => effectiveHorizontalMargin / 2.0,
         0 => effectiveHorizontalMargin,
         _ => effectiveColumnSpacing / 2.0,
-      };
+      }
 
       final double paddingEnd;
       if (dataColumnIndex == columns.length - 1) {

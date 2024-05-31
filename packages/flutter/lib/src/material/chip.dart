@@ -1530,7 +1530,7 @@ class _ChipRenderWidget extends SlottedMultiChildRenderObjectWidget<_ChipSlot, R
       _ChipSlot.label      => theme.label,
       _ChipSlot.avatar     => theme.avatar,
       _ChipSlot.deleteIcon => theme.deleteIcon,
-    };
+    }
   }
 
   @override
@@ -2021,17 +2021,17 @@ class _RenderChip extends RenderBox with SlottedContainerRenderObjectMixin<_Chip
     final Color color = switch (theme.brightness) {
       Brightness.light => Colors.white,
       Brightness.dark  => Colors.black,
-    };
+    }
     return ColorTween(begin: color.withAlpha(_kDisabledAlpha), end: color).evaluate(enableAnimation)!;
   }
 
   void _paintCheck(Canvas canvas, Offset origin, double size) {
-    Color? paintColor = theme.checkmarkColor ?? switch ((theme.brightness, theme.showAvatar)) {
+    Color? paintColor = theme.checkmarkColor ?? switch (theme.brightness, theme.showAvatar) {
       (Brightness.light, true ) => Colors.white,
       (Brightness.light, false) => Colors.black.withAlpha(_kCheckmarkAlpha),
       (Brightness.dark,  true ) => Colors.black,
       (Brightness.dark,  false) => Colors.white.withAlpha(_kCheckmarkAlpha),
-    };
+    }
 
     final ColorTween fadeTween = ColorTween(begin: Colors.transparent, end: paintColor);
 
@@ -2315,7 +2315,7 @@ bool _hitIsOnDeleteIcon({
   return switch (textDirection) {
     TextDirection.ltr => adjustedPosition.dx >= deflatedSize.width - accessibleDeleteButtonWidth,
     TextDirection.rtl => adjustedPosition.dx <= accessibleDeleteButtonWidth,
-  };
+  }
 }
 
 // BEGIN GENERATED TOKEN PROPERTIES - Chip

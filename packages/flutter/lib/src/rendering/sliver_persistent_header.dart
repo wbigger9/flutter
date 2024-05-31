@@ -155,7 +155,7 @@ abstract class RenderSliverPersistentHeader extends RenderSliver with RenderObje
     return switch (constraints.axis) {
       Axis.vertical => child!.size.height,
       Axis.horizontal => child!.size.width,
-    };
+    }
   }
 
   bool _needsUpdateChild = true;
@@ -301,7 +301,7 @@ abstract class RenderSliverPersistentHeader extends RenderSliver with RenderObje
         AxisDirection.left  => Offset(geometry!.paintExtent - childMainAxisPosition(child!) - childExtent, 0.0),
         AxisDirection.right => Offset(childMainAxisPosition(child!), 0.0),
         AxisDirection.down  => Offset(0.0, childMainAxisPosition(child!)),
-      };
+      }
       context.paintChild(child!, offset);
     }
   }
@@ -452,7 +452,7 @@ abstract class RenderSliverPinnedPersistentHeader extends RenderSliverPersistent
       AxisDirection.left  => _trim(localBounds, right: childExtent),
       AxisDirection.right => _trim(localBounds, left: 0),
       AxisDirection.down  => _trim(localBounds, top: 0),
-    };
+    }
 
     super.showOnScreen(
       descendant: this,

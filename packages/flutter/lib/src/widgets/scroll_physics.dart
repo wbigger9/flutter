@@ -678,7 +678,7 @@ class BouncingScrollPhysics extends ScrollPhysics {
     return math.pow(1 - overscrollFraction, 2) * switch (decelerationRate) {
       ScrollDecelerationRate.fast   => 0.26,
       ScrollDecelerationRate.normal => 0.52,
-    };
+    }
   }
 
   @override
@@ -780,7 +780,7 @@ class BouncingScrollPhysics extends ScrollPhysics {
     return switch (decelerationRate) {
       ScrollDecelerationRate.fast => kMaxFlingVelocity * 8.0,
       ScrollDecelerationRate.normal => super.maxFlingVelocity,
-    };
+    }
   }
 
   @override

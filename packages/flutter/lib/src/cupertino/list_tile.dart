@@ -259,7 +259,7 @@ class _CupertinoListTileState extends State<CupertinoListTile> {
     final bool baseType = switch (widget._type) {
       _CupertinoListTileType.base    => true,
       _CupertinoListTileType.notched => false,
-    };
+    }
     final Widget title = DefaultTextStyle(
       style: baseType || widget.subtitle == null ? textStyle : textStyle.copyWith(
         fontWeight: FontWeight.w600,
@@ -275,7 +275,7 @@ class _CupertinoListTileState extends State<CupertinoListTile> {
       _CupertinoListTileType.notched when widget.leading != null => _kNotchedPadding,
       _CupertinoListTileType.base => _kPadding,
       _CupertinoListTileType.notched => _kNotchedPaddingWithoutLeading,
-    };
+    }
 
     // The color for default state tile is set to either what user provided or
     // null and it will resolve to the correct color provided by context. But if
@@ -291,7 +291,7 @@ class _CupertinoListTileState extends State<CupertinoListTile> {
       _CupertinoListTileType.notched when widget.leading != null => _kNotchedMinHeight,
       _CupertinoListTileType.base => _kMinHeight,
       _CupertinoListTileType.notched => _kNotchedMinHeightWithoutLeading,
-    };
+    }
 
     final Widget child = Container(
       constraints: BoxConstraints(minWidth: double.infinity, minHeight: minHeight),

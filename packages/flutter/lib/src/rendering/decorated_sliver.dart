@@ -104,7 +104,7 @@ class RenderDecoratedSliver extends RenderProxySliver {
     final (Size childSize, Offset scrollOffset) = switch (constraints.axis) {
       Axis.horizontal => (Size(cappedMainAxisExtent, constraints.crossAxisExtent), Offset(-constraints.scrollOffset, 0.0)),
       Axis.vertical   => (Size(constraints.crossAxisExtent, cappedMainAxisExtent), Offset(0.0, -constraints.scrollOffset)),
-    };
+    }
     offset += (child!.parentData! as SliverPhysicalParentData).paintOffset;
     void paintDecoration() => _painter!.paint(context.canvas, offset + scrollOffset, configuration.copyWith(size: childSize));
     switch (position) {

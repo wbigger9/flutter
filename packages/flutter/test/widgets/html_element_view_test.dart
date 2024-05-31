@@ -416,11 +416,11 @@ class FakePlatformViewRegistry implements ui_web.PlatformViewRegistry {
     if (_findRegisteredViewFactory(viewType) != null) {
       return false;
     }
-    _registeredViewTypes.add((
+    _registeredViewTypes.add(
       viewType: viewType,
       isVisible: isVisible,
       viewFactory: viewFactory,
-    ));
+    );
     return true;
   }
 
@@ -446,7 +446,7 @@ class FakePlatformViewRegistry implements ui_web.PlatformViewRegistry {
       'create'  => _create(call),
       'dispose' => _dispose(call),
       _ => Future<dynamic>.sync(() => null),
-    };
+    }
   }
 
   Future<dynamic> _create(MethodCall call) async {
@@ -473,12 +473,12 @@ class FakePlatformViewRegistry implements ui_web.PlatformViewRegistry {
     final ui_web.ParameterizedPlatformViewFactory viewFactory =
         registered.viewFactory as ui_web.ParameterizedPlatformViewFactory;
 
-    _views.add((
+    _views.add(
       id: id,
       viewType: viewType,
       params: params,
       htmlElement: viewFactory(id, params: params),
-    ));
+    );
     return null;
   }
 

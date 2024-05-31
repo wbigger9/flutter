@@ -215,7 +215,7 @@ class _CalendarDatePickerState extends State<CalendarDatePicker> {
         final String message = switch (mode) {
           DatePickerMode.day  => _localizations.formatMonthYear(selected),
           DatePickerMode.year => _localizations.formatYear(selected),
-        };
+        }
         SemanticsService.announce(message, _textDirection);
       }
     });

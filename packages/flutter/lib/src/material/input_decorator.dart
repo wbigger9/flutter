@@ -291,7 +291,7 @@ class _Shaker extends AnimatedWidget {
       <= 0.25 => -t,
       <  0.75 => t - 0.5,
       _ => (1.0 - t) * 4.0,
-    };
+    }
   }
 
   @override
@@ -564,7 +564,7 @@ class FloatingLabelAlignment {
      -1.0 => 'FloatingLabelAlignment.start',
       0.0 => 'FloatingLabelAlignment.center',
       _ => 'FloatingLabelAlignment(x: ${x.toStringAsFixed(1)})',
-    };
+    }
   }
 
   @override
@@ -945,7 +945,7 @@ class _RenderDecoration extends RenderBox with SlottedContainerRenderObjectMixin
     final double ascent = math.max(counterAscent, getBaseline(helperError, helperErrorConstraints)) + subtextGap;
     final double bottomHeight = math.max(counterAscent, helperErrorHeight) + subtextGap;
     final double subtextHeight = math.max(counterSize.height, helperErrorHeight) + subtextGap;
-    return (ascent: ascent, bottomHeight: bottomHeight, subtextHeight: subtextHeight);
+    return ascent: ascent, bottomHeight: bottomHeight, subtextHeight: subtextHeight;
   }
 
   // Returns a value used by performLayout to position all of the renderers.
@@ -1317,7 +1317,7 @@ class _RenderDecoration extends RenderBox with SlottedContainerRenderObjectMixin
       final double x = switch (textDirection) {
         TextDirection.rtl => 0.0,
         TextDirection.ltr => _boxSize(icon).width,
-      };
+      }
       _boxParentData(container).offset = Offset(x, 0.0);
     }
 
@@ -1331,7 +1331,7 @@ class _RenderDecoration extends RenderBox with SlottedContainerRenderObjectMixin
       final double x = switch (textDirection) {
         TextDirection.rtl => overallWidth - icon!.size.width,
         TextDirection.ltr => 0.0,
-      };
+      }
       centerLayout(icon, x);
     }
 
@@ -1638,7 +1638,7 @@ class _Decorator extends SlottedMultiChildRenderObjectWidget<_DecorationSlot, Re
       _DecorationSlot.helperError => decoration.helperError,
       _DecorationSlot.counter     => decoration.counter,
       _DecorationSlot.container   => decoration.container,
-    };
+    }
   }
 
   @override
@@ -2373,7 +2373,7 @@ class _InputDecoratorState extends State<InputDecorator> with TickerProviderStat
     final bool flipHorizontal = switch (textDirection) {
       TextDirection.ltr => false,
       TextDirection.rtl => true,
-    };
+    }
     final EdgeInsets? resolvedPadding = decoration.contentPadding?.resolve(textDirection);
     final EdgeInsetsDirectional? decorationContentPadding = resolvedPadding == null
       ? null
@@ -4589,12 +4589,12 @@ class _InputDecoratorDefaultsM2 extends InputDecorationTheme {
 
   @override
   Color? get fillColor => MaterialStateColor.resolveWith((Set<MaterialState> states) {
-    return switch ((Theme.of(context).brightness, states.contains(MaterialState.disabled))) {
+    return switch (Theme.of(context).brightness, states.contains(MaterialState.disabled)) {
       (Brightness.dark, true)   => const Color(0x0DFFFFFF), //  5% white
       (Brightness.dark, false)  => const Color(0x1AFFFFFF), // 10% white
       (Brightness.light, true)  => const Color(0x05000000), //  2% black
       (Brightness.light, false) => const Color(0x0A000000), //  4% black
-    };
+    }
   });
 
   @override
@@ -4608,7 +4608,7 @@ class _InputDecoratorDefaultsM2 extends InputDecorationTheme {
     return switch (Theme.of(context).brightness) {
       Brightness.dark  => Colors.white70,
       Brightness.light => Colors.black45,
-    };
+    }
   });
 
   @override
@@ -4622,7 +4622,7 @@ class _InputDecoratorDefaultsM2 extends InputDecorationTheme {
     return switch (Theme.of(context).brightness) {
       Brightness.dark  => Colors.white70,
       Brightness.light => Colors.black45,
-    };
+    }
   });
 
   @override
@@ -4639,7 +4639,7 @@ class _InputDecoratorDefaultsM2 extends InputDecorationTheme {
     return switch (Theme.of(context).brightness) {
       Brightness.dark  => Colors.white70,
       Brightness.light => Colors.black45,
-    };
+    }
   });
 }
 

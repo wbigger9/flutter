@@ -3008,7 +3008,7 @@ class SemanticsNode with DiagnosticableTreeMixin {
     return switch (childOrder) {
       DebugSemanticsDumpOrder.inverseHitTest => _children!,
       DebugSemanticsDumpOrder.traversalOrder => _childrenInTraversalOrder(),
-    };
+    }
   }
 }
 
@@ -5043,7 +5043,7 @@ AttributedString _concatAttributedString({
     final AttributedString directionEmbedding = switch (otherTextDirection) {
       TextDirection.rtl => AttributedString(Unicode.RLE),
       TextDirection.ltr => AttributedString(Unicode.LRE),
-    };
+    }
     otherAttributedString = directionEmbedding + otherAttributedString + AttributedString(Unicode.PDF);
   }
   if (thisAttributedString.string.isEmpty) {

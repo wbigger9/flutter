@@ -1233,7 +1233,7 @@ void main() {
     final bool isMobile = switch (themeData.platform) {
       TargetPlatform.android || TargetPlatform.iOS || TargetPlatform.fuchsia => true,
       TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => false,
-    };
+    }
     int expectedCount = isMobile ? 0 : 1;
 
     // Test onSelected on key press

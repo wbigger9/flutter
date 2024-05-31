@@ -524,7 +524,7 @@ class DefaultTextEditingShortcuts extends StatelessWidget {
       TargetPlatform.linux   => _linuxShortcuts,
       TargetPlatform.macOS   => _macShortcuts,
       TargetPlatform.windows => _windowsShortcuts,
-    };
+    }
   }
 
   Map<ShortcutActivator, Intent>? _getDisablingShortcut() {

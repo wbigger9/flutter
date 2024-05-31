@@ -21,7 +21,6 @@ import 'ink_well.dart';
 import 'material.dart';
 import 'material_localizations.dart';
 import 'material_state.dart';
-import 'menu_bar_theme.dart';
 import 'menu_button_theme.dart';
 import 'menu_style.dart';
 import 'menu_theme.dart';
@@ -1910,12 +1909,12 @@ class _SubmenuButtonState extends State<SubmenuButton> {
     final Axis orientation = _anchor?._orientation ?? Axis.vertical;
     // Move the submenu over by the size of the menu padding, so that
     // the first menu item aligns with the submenu button that opens it.
-    menuPaddingOffset += switch ((orientation, Directionality.of(context))) {
+    menuPaddingOffset += switch (orientation, Directionality.of(context)) {
       (Axis.horizontal, TextDirection.rtl) => Offset(menuPadding.right, 0),
       (Axis.horizontal, TextDirection.ltr) => Offset(-menuPadding.left, 0),
       (Axis.vertical, TextDirection.rtl)   => Offset(0, -menuPadding.top),
       (Axis.vertical, TextDirection.ltr)   => Offset(0, -menuPadding.top),
-    };
+    }
 
     return MenuAnchor(
       controller: _menuController,
@@ -2455,12 +2454,12 @@ class _MenuDirectionalFocusAction extends DirectionalFocusAction {
     final bool rtl = switch (Directionality.of(context)) {
       TextDirection.rtl => true,
       TextDirection.ltr => false,
-    };
+    }
 
     assert(_debugMenuInfo('In _MenuDirectionalFocusAction, current node is ${anchor.widget.childFocusNode?.debugLabel}, '
         'button is${buttonIsFocused ? '' : ' not'} focused. Assuming ${orientation.name} orientation.'));
 
-    final bool Function(_MenuAnchorState) traversal = switch ((intent.direction, orientation)) {
+    final bool Function(_MenuAnchorState) traversal = switch (intent.direction, orientation) {
       (TraversalDirection.up, Axis.horizontal) => _moveToParent,
       (TraversalDirection.up, Axis.vertical) => firstItemIsFocused ? _moveToParent: _moveToPrevious,
       (TraversalDirection.down, Axis.horizontal) => _moveToSubmenu,
@@ -2473,7 +2472,7 @@ class _MenuDirectionalFocusAction extends DirectionalFocusAction {
       (TraversalDirection.right, Axis.vertical) when !rtl => buttonIsFocused ? _moveToSubmenu : _moveToNextFocusableTopLevel,
       (TraversalDirection.right, Axis.vertical) when differentParent => _moveToPreviousFocusableTopLevel,
       (TraversalDirection.right, Axis.vertical) => buttonIsFocused ? _moveToPreviousFocusableTopLevel : _moveToParent,
-    };
+    }
     if (!traversal(anchor)) {
       super.invoke(intent);
     }
@@ -3168,7 +3167,7 @@ class _MenuLayout extends SingleChildLayoutDelegate {
         directionalOffset = switch (textDirection) {
           TextDirection.rtl => Offset(-alignmentOffset.dx, alignmentOffset.dy),
           TextDirection.ltr => alignmentOffset,
-        };
+        }
       } else {
         directionalOffset = alignmentOffset;
       }
@@ -3334,7 +3333,7 @@ class _MenuPanelState extends State<_MenuPanel> {
     final (MenuStyle? themeStyle, MenuStyle defaultStyle) = switch (widget.orientation) {
       Axis.horizontal => (MenuBarTheme.of(context).style, _MenuBarDefaultsM3(context)),
       Axis.vertical => (MenuTheme.of(context).style, _MenuDefaultsM3(context)),
-    };
+    }
     final MenuStyle? widgetStyle = widget.menuStyle;
 
     T? effectiveValue<T>(T? Function(MenuStyle? style) getProperty) {
@@ -3465,7 +3464,7 @@ class _MenuPanelState extends State<_MenuPanel> {
     return switch (widget.orientation) {
       Axis.horizontal => IntrinsicHeight(child: child),
       Axis.vertical   => IntrinsicWidth(child: child),
-    };
+    }
   }
 }
 
@@ -3496,7 +3495,7 @@ class _Submenu extends StatelessWidget {
     final (MenuStyle? themeStyle,  MenuStyle defaultStyle) = switch (anchor._parent?._orientation) {
       Axis.horizontal || null => (MenuBarTheme.of(context).style, _MenuBarDefaultsM3(context)),
       Axis.vertical => (MenuTheme.of(context).style, _MenuDefaultsM3(context)),
-    };
+    }
     T? effectiveValue<T>(T? Function(MenuStyle? style) getProperty) {
       return getProperty(menuStyle) ?? getProperty(themeStyle) ?? getProperty(defaultStyle);
     }

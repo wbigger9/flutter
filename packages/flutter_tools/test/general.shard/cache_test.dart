@@ -1054,15 +1054,15 @@ void main() {
           java: FakeJava(),
           platform: FakePlatform(),
         );
-        expect(await mavenArtifacts.isUpToDate(memoryFileSystem!), isFalse);
+        expect(await mavenArtifacts.isUpToDate(memoryFileSystem), isFalse);
 
         final Directory gradleWrapperDir = cache!.getArtifactDirectory('gradle_wrapper')..createSync(recursive: true);
         gradleWrapperDir.childFile('gradlew').writeAsStringSync('irrelevant');
         gradleWrapperDir.childFile('gradlew.bat').writeAsStringSync('irrelevant');
 
-        await mavenArtifacts.update(FakeArtifactUpdater(), BufferLogger.test(), memoryFileSystem!, FakeOperatingSystemUtils());
+        await mavenArtifacts.update(FakeArtifactUpdater(), BufferLogger.test(), memoryFileSystem, FakeOperatingSystemUtils());
 
-        expect(await mavenArtifacts.isUpToDate(memoryFileSystem!), isFalse);
+        expect(await mavenArtifacts.isUpToDate(memoryFileSystem), isFalse);
         expect(fakeAndroidSdk!.reinitialized, true);
       } finally {
         Cache.flutterRoot = oldRoot;
@@ -1090,11 +1090,11 @@ void main() {
         java: FakeJava(),
         platform: FakePlatform(),
       );
-      expect(await mavenArtifacts.isUpToDate(memoryFileSystem!), isFalse);
+      expect(await mavenArtifacts.isUpToDate(memoryFileSystem), isFalse);
 
-      await mavenArtifacts.update(FakeArtifactUpdater(), BufferLogger.test(), memoryFileSystem!, FakeOperatingSystemUtils());
+      await mavenArtifacts.update(FakeArtifactUpdater(), BufferLogger.test(), memoryFileSystem, FakeOperatingSystemUtils());
 
-      expect(await mavenArtifacts.isUpToDate(memoryFileSystem!), isFalse);
+      expect(await mavenArtifacts.isUpToDate(memoryFileSystem), isFalse);
     }, overrides: <Type, Generator>{
       Cache: () => cache,
       FileSystem: () => memoryFileSystem,

@@ -579,7 +579,7 @@ class _InteractiveViewerState extends State<InteractiveViewer> with TickerProvid
         PanAxis.vertical   => _alignAxis(translation, Axis.vertical),
         PanAxis.aligned    => _alignAxis(translation, _currentAxis),
         PanAxis.free       => translation,
-      };
+      }
     } else {
       alignedTranslation = translation;
     }
@@ -710,7 +710,7 @@ class _InteractiveViewerState extends State<InteractiveViewer> with TickerProvid
       _GestureType.rotate => _rotateEnabled,
       _GestureType.scale => widget.scaleEnabled,
       _GestureType.pan || null => widget.panEnabled,
-    };
+    }
   }
 
   // Decide which type of gesture this is by comparing the amount of scale
@@ -925,7 +925,7 @@ class _InteractiveViewerState extends State<InteractiveViewer> with TickerProvid
         _scaleController.duration = Duration(milliseconds: (tFinal * 1000).round());
         _scaleAnimation!.addListener(_onScaleAnimate);
         _scaleController.forward();
-      case _GestureType.rotate || null:
+      const case, _GestureType.rotate || null:
         break;
     }
   }
@@ -1415,7 +1415,7 @@ Offset _alignAxis(Offset offset, Axis axis) {
   return switch (axis) {
     Axis.horizontal => Offset(offset.dx, 0.0),
     Axis.vertical   => Offset(0.0, offset.dy),
-  };
+  }
 }
 
 // Given two points, return the axis where the distance between the points is

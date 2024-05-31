@@ -823,7 +823,7 @@ class _ContextMenuRoute<T> extends PopupRoute<T> {
       _ContextMenuLocation.center => AlignmentDirectional.topCenter,
       _ContextMenuLocation.right  => AlignmentDirectional.topEnd,
       _ContextMenuLocation.left   => AlignmentDirectional.topStart,
-    };
+    }
   }
 
   // The place to start the sheetRect animation from.
@@ -1156,7 +1156,7 @@ class _ContextMenuRouteStaticState extends State<_ContextMenuRouteStatic> with T
       _ContextMenuLocation.left   => Alignment.topRight,
       _ContextMenuLocation.center => Alignment.topRight,
       _ContextMenuLocation.right  => Alignment.topLeft,
-    };
+    }
   }
 
   void _setDragOffset(Offset dragOffset) {
@@ -1227,7 +1227,7 @@ class _ContextMenuRouteStaticState extends State<_ContextMenuRouteStatic> with T
       _ContextMenuLocation.right  => <Widget>[sheet, spacer, child],
       _ContextMenuLocation.center => <Widget>[child, spacer, sheet],
       _ContextMenuLocation.left   => <Widget>[child, spacer, sheet],
-    };
+    }
   }
 
   // Build the animation for the _ContextMenuSheet.
@@ -1395,7 +1395,7 @@ class _ContextMenuSheet extends StatelessWidget {
       _ContextMenuLocation.center => <Widget>[menu, const Spacer()],
       _ContextMenuLocation.right  => <Widget>[const Spacer(), menu],
       _ContextMenuLocation.left   => <Widget>[menu, const Spacer()],
-    };
+    }
   }
 
   @override

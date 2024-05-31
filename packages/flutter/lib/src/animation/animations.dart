@@ -312,7 +312,7 @@ class ReverseAnimation extends Animation<double>
       AnimationStatus.reverse   => AnimationStatus.forward,
       AnimationStatus.completed => AnimationStatus.dismissed,
       AnimationStatus.dismissed => AnimationStatus.completed,
-    };
+    }
   }
 
   @override
@@ -579,7 +579,7 @@ class TrainHoppingAnimation extends Animation<double>
       hop = switch (_mode!) {
         _TrainHoppingMode.minimize => _nextTrain!.value <= _currentTrain!.value,
         _TrainHoppingMode.maximize => _nextTrain!.value >= _currentTrain!.value,
-      };
+      }
       if (hop) {
         _currentTrain!
           ..removeStatusListener(_statusChangeHandler)

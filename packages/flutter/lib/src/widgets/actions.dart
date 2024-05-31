@@ -663,9 +663,9 @@ class ActionDispatcher with Diagnosticable {
   ]) {
     final BuildContext? target = context ?? primaryFocus?.context;
     if (action._isEnabled(intent, target)) {
-      return (true, action._invoke(intent, target));
+      return true, action._invoke(intent, target);
     }
-    return (false, null);
+    return false, null;
   }
 }
 
@@ -1247,7 +1247,7 @@ class _FocusableActionDetectorState extends State<FocusableActionDetector> {
       _canShowHighlight = switch (FocusManager.instance.highlightMode) {
         FocusHighlightMode.touch       => false,
         FocusHighlightMode.traditional => true,
-      };
+      }
     });
   }
 
@@ -1304,7 +1304,7 @@ class _FocusableActionDetectorState extends State<FocusableActionDetector> {
       return switch (MediaQuery.maybeNavigationModeOf(context)) {
         NavigationMode.traditional || null => target.enabled,
         NavigationMode.directional => true,
-      };
+      }
     }
 
     bool shouldShowFocusHighlight(FocusableActionDetector target) {
@@ -1342,7 +1342,7 @@ class _FocusableActionDetectorState extends State<FocusableActionDetector> {
     return switch (MediaQuery.maybeNavigationModeOf(context)) {
       NavigationMode.traditional || null => widget.enabled,
       NavigationMode.directional => true,
-    };
+    }
   }
 
   // This global key is needed to keep only the necessary widgets in the tree

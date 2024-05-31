@@ -119,7 +119,7 @@ class _SelectableTextSelectionGestureDetectorBuilder extends TextSelectionGestur
     final Offset scrollableOffset = switch (axisDirectionToAxis(_scrollDirection ?? AxisDirection.left)) {
       Axis.horizontal => Offset(_scrollPosition - _dragStartScrollOffset, 0),
       Axis.vertical   => Offset(0, _scrollPosition - _dragStartScrollOffset),
-    };
+    }
     renderEditable.selectWordsInRange(
       from: details.globalPosition - details.offsetFromOrigin - editableOffset - scrollableOffset,
       to: details.globalPosition,
@@ -749,7 +749,7 @@ class _SelectableTextState extends State<SelectableText> implements TextSelectio
     final TextScaler? effectiveScaler = widget.textScaler ?? switch (widget.textScaleFactor) {
       null => null,
       final double textScaleFactor => TextScaler.linear(textScaleFactor),
-    };
+    }
     final Widget child = RepaintBoundary(
       child: EditableText(
         key: editableTextKey,

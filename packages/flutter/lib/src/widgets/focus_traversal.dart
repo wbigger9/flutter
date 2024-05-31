@@ -712,7 +712,7 @@ mixin DirectionalFocusTraversalPolicyMixin on FocusTraversalPolicy {
       TraversalDirection.down  => (true, true),   // Start with the topmost node.
       TraversalDirection.left  => (false, false), // Start with the rightmost node.
       TraversalDirection.right => (false, true),  // Start with the leftmost node.
-    };
+    }
     mergeSort<FocusNode>(sorted, compare: (FocusNode a, FocusNode b) {
       if (vertical) {
         if (first) {

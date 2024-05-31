@@ -284,23 +284,23 @@ class FilledButton extends ButtonStyleButton {
     ButtonLayerBuilder? backgroundBuilder,
     ButtonLayerBuilder? foregroundBuilder,
   }) {
-    final MaterialStateProperty<Color?>? foregroundColorProp = switch ((foregroundColor, disabledForegroundColor)) {
+    final MaterialStateProperty<Color?>? foregroundColorProp = switch (foregroundColor, disabledForegroundColor) {
       (null, null) => null,
       (_, _) => _FilledButtonDefaultColor(foregroundColor, disabledForegroundColor),
-    };
-    final MaterialStateProperty<Color?>? backgroundColorProp = switch ((backgroundColor, disabledBackgroundColor)) {
+    }
+    final MaterialStateProperty<Color?>? backgroundColorProp = switch (backgroundColor, disabledBackgroundColor) {
       (null, null) => null,
       (_, _) => _FilledButtonDefaultColor(backgroundColor, disabledBackgroundColor),
-    };
-    final MaterialStateProperty<Color?>? iconColorProp = switch ((iconColor, disabledIconColor)) {
+    }
+    final MaterialStateProperty<Color?>? iconColorProp = switch (iconColor, disabledIconColor) {
       (null, null) => null,
       (_, _) => _FilledButtonDefaultColor(iconColor, disabledIconColor),
-    };
-    final MaterialStateProperty<Color?>? overlayColorProp = switch ((foregroundColor, overlayColor)) {
+    }
+    final MaterialStateProperty<Color?>? overlayColorProp = switch (foregroundColor, overlayColor) {
       (null, null) => null,
       (_, final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
       (_, _) => _FilledButtonDefaultOverlay(overlayColor ?? foregroundColor),
-    };
+    }
     final MaterialStateProperty<MouseCursor?> mouseCursor = _FilledButtonDefaultMouseCursor(enabledMouseCursor, disabledMouseCursor);
 
     return ButtonStyle(
@@ -452,7 +452,7 @@ class FilledButton extends ButtonStyleButton {
     return switch (_variant) {
       _FilledButtonVariant.filled => _FilledButtonDefaultsM3(context),
       _FilledButtonVariant.tonal  => _FilledTonalButtonDefaultsM3(context),
-    };
+    }
   }
 
   /// Returns the [FilledButtonThemeData.style] of the closest

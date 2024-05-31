@@ -287,7 +287,7 @@ class SelectableRegion extends StatefulWidget {
       // See: https://github.com/flutter/flutter/issues/141775.
       TargetPlatform.iOS
         => false,
-    };
+    }
     final bool canShare = onShare != null && platformCanShare;
 
     // On Android, the share button is before the select all button.
@@ -475,7 +475,7 @@ class SelectableRegionState extends State<SelectableRegion> with TextSelectionDe
     final TextSelection selection = switch (geometry.status) {
       SelectionStatus.uncollapsed || SelectionStatus.collapsed => const TextSelection(baseOffset: 0, extentOffset: 1),
       SelectionStatus.none => const TextSelection.collapsed(offset: 1),
-    };
+    }
     textEditingValue = TextEditingValue(text: '__', selection: selection);
     if (_hasSelectionOverlayGeometry) {
       _updateSelectionOverlay();
@@ -2396,7 +2396,7 @@ abstract class MultiSelectableSelectionContainerDelegate extends SelectionContai
       currentSelectionStartIndex = currentSelectionEndIndex = switch (event.direction) {
         SelectionExtendDirection.previousLine || SelectionExtendDirection.backward => selectables.length - 1,
         SelectionExtendDirection.nextLine || SelectionExtendDirection.forward => 0,
-      };
+      }
     }
     int targetIndex = event.isEnd ? currentSelectionEndIndex : currentSelectionStartIndex;
     SelectionResult result = dispatchSelectionEventToChild(selectables[targetIndex], event);
@@ -2599,7 +2599,7 @@ abstract class MultiSelectableSelectionContainerDelegate extends SelectionContai
     // has been scrolled out of view.
     final bool isCurrentEdgeWithinViewport = isEnd ? _selectionGeometry.endSelectionPoint != null : _selectionGeometry.startSelectionPoint != null;
     final bool isOppositeEdgeWithinViewport = isEnd ? _selectionGeometry.startSelectionPoint != null : _selectionGeometry.endSelectionPoint != null;
-    int newIndex = switch ((isEnd, isCurrentEdgeWithinViewport, isOppositeEdgeWithinViewport)) {
+    int newIndex = switch (isEnd, isCurrentEdgeWithinViewport, isOppositeEdgeWithinViewport) {
       (true, true, true) => currentSelectionEndIndex,
       (true, true, false) => currentSelectionEndIndex,
       (true, false, true) => currentSelectionStartIndex,
@@ -2608,7 +2608,7 @@ abstract class MultiSelectableSelectionContainerDelegate extends SelectionContai
       (false, true, false) => currentSelectionStartIndex,
       (false, false, true) => currentSelectionEndIndex,
       (false, false, false) => 0,
-    };
+    }
     bool? forward;
     late SelectionResult currentSelectableResult;
     // This loop sends the selection event to one of the following to determine

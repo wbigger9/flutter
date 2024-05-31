@@ -1698,7 +1698,7 @@ class SliverOverlapAbsorberHandle extends ChangeNotifier {
       0 => ', orphan',
       1 => null, // normal case
       _ => ', $_writers WRITERS ASSIGNED',
-    };
+    }
     return '${objectRuntimeType(this, 'SliverOverlapAbsorberHandle')}($layoutExtent$extra)';
   }
 }

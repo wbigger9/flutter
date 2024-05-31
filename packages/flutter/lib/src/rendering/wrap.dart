@@ -95,7 +95,7 @@ enum WrapAlignment {
       WrapAlignment.spaceBetween => (0,                           freeSpace / (itemCount - 1) + itemSpacing),
       WrapAlignment.spaceAround =>  (freeSpace / itemCount / 2,   freeSpace / itemCount + itemSpacing),
       WrapAlignment.spaceEvenly =>  (freeSpace / (itemCount + 1), freeSpace / (itemCount + 1) + itemSpacing),
-    };
+    }
   }
 }
 
@@ -532,36 +532,36 @@ class RenderWrap extends RenderBox
     return switch (direction) {
       Axis.horizontal => childSize.width,
       Axis.vertical   => childSize.height,
-    };
+    }
   }
 
   double _getCrossAxisExtent(Size childSize) {
     return switch (direction) {
       Axis.horizontal => childSize.height,
       Axis.vertical   => childSize.width,
-    };
+    }
   }
 
   Offset _getOffset(double mainAxisOffset, double crossAxisOffset) {
     return switch (direction) {
       Axis.horizontal => Offset(mainAxisOffset, crossAxisOffset),
       Axis.vertical   => Offset(crossAxisOffset, mainAxisOffset),
-    };
+    }
   }
 
   (bool flipHorizontal, bool flipVertical) get _areAxesFlipped {
     final bool flipHorizontal = switch (textDirection ?? TextDirection.ltr) {
       TextDirection.ltr => false,
       TextDirection.rtl => true,
-    };
+    }
     final bool flipVertical = switch (verticalDirection) {
       VerticalDirection.down => false,
       VerticalDirection.up => true,
-    };
+    }
     return switch (direction) {
       Axis.horizontal => (flipHorizontal, flipVertical),
       Axis.vertical => (flipVertical, flipHorizontal),
-    };
+    }
   }
 
   @override
@@ -572,7 +572,7 @@ class RenderWrap extends RenderBox
     final BoxConstraints childConstraints = switch (direction) {
       Axis.horizontal => BoxConstraints(maxWidth: constraints.maxWidth),
       Axis.vertical => BoxConstraints(maxHeight: constraints.maxHeight),
-    };
+    }
 
     final (_AxisSize childrenAxisSize, List<_RunMetrics> runMetrics) = _computeRuns(constraints, ChildLayoutHelper.dryLayoutChild);
     final _AxisSize containerAxisSize = childrenAxisSize.applyConstraints(constraints, direction);
@@ -596,7 +596,7 @@ class RenderWrap extends RenderBox
     final (BoxConstraints childConstraints, double mainAxisLimit) = switch (direction) {
       Axis.horizontal => (BoxConstraints(maxWidth: constraints.maxWidth), constraints.maxWidth),
       Axis.vertical => (BoxConstraints(maxHeight: constraints.maxHeight), constraints.maxHeight),
-    };
+    }
 
     double mainAxisExtent = 0.0;
     double crossAxisExtent = 0.0;
@@ -663,7 +663,7 @@ class RenderWrap extends RenderBox
     final (BoxConstraints childConstraints, double mainAxisLimit) = switch (direction) {
       Axis.horizontal => (BoxConstraints(maxWidth: constraints.maxWidth), constraints.maxWidth),
       Axis.vertical => (BoxConstraints(maxHeight: constraints.maxHeight), constraints.maxHeight),
-    };
+    }
 
     final (bool flipMainAxis, _) = _areAxesFlipped;
     final double spacing = this.spacing;
@@ -685,7 +685,7 @@ class RenderWrap extends RenderBox
     assert(runMetrics.isNotEmpty);
     final double totalRunSpacing = runSpacing * (runMetrics.length - 1);
     childrenAxisSize += _AxisSize(mainAxisExtent: totalRunSpacing, crossAxisExtent: 0.0) + currentRun!.axisSize.flipped;
-    return (childrenAxisSize.flipped, runMetrics);
+    return childrenAxisSize.flipped, runMetrics;
   }
 
   void _positionChildren(List<_RunMetrics> runMetrics, _AxisSize freeAxisSize, _AxisSize containerAxisSize, _PositionChild positionChild, _GetChildSize getChildSize) {
@@ -718,7 +718,7 @@ class RenderWrap extends RenderBox
 
       int remainingChildCount = run.childCount;
       for (RenderBox? child = run.leadingChild; child != null && remainingChildCount > 0; child = nextChild(child), remainingChildCount -= 1) {
-        final _AxisSize(mainAxisExtent: double childMainAxisExtent, crossAxisExtent: double childCrossAxisExtent) = _AxisSize.fromSize(size: getChildSize(child), direction: direction);
+        final AxisSize(mainAxisExtent: double childMainAxisExtent, crossAxisExtent: double childCrossAxisExtent) = AxisSize.fromSize(size: getChildSize(child), direction: direction);
         final double childCrossAxisOffset = effectiveCrossAlignment._alignment * (runCrossAxisExtent - childCrossAxisExtent);
         positionChild(_getOffset(childMainAxisOffset, runCrossAxisOffset + childCrossAxisOffset), child);
         childMainAxisOffset += childMainAxisExtent + childBetweenSpace;

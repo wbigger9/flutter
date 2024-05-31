@@ -969,6 +969,6 @@ class _DragAvatar<T extends Object> extends Drag {
       Axis.horizontal => Offset(offset.dx, 0.0),
       Axis.vertical   => Offset(0.0, offset.dy),
       null => offset,
-    };
+    }
   }
 }

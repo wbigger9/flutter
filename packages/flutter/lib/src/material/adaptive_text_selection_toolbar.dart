@@ -223,7 +223,7 @@ class AdaptiveTextSelectionToolbar extends StatelessWidget {
           ContextMenuButtonType.share     => localizations.shareButtonLabel,
           ContextMenuButtonType.liveTextInput => localizations.scanTextButtonLabel,
           ContextMenuButtonType.custom => '',
-        };
+        } {}
     }
   }
 

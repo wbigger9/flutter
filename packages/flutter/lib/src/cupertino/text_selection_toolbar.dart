@@ -348,10 +348,10 @@ class _RenderCupertinoTextSelectionToolbarShape extends RenderShiftedBox {
     final Rect rect = rrect.outerRect;
 
     final List<(Offset, Radius)> rrectCorners = <(Offset, Radius)>[
-      (rect.bottomRight, -rrect.brRadius),
-      (rect.bottomLeft, Radius.elliptical(rrect.blRadiusX, -rrect.blRadiusY)),
-      (rect.topLeft, rrect.tlRadius),
-      (rect.topRight, Radius.elliptical(-rrect.trRadiusX, rrect.trRadiusY)),
+      rect.bottomRight, -rrect.brRadius,
+      rect.bottomLeft, Radius.elliptical(rrect.blRadiusX, -rrect.blRadiusY),
+      rect.topLeft, rrect.tlRadius,
+      rect.topRight, Radius.elliptical(-rrect.trRadiusX, rrect.trRadiusY),
     ];
 
     // Add the 4 corners to the path clockwise. Convert radians to quadrants

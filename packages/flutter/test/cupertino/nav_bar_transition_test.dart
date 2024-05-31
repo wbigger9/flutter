@@ -62,9 +62,9 @@ CupertinoPageScaffold? scaffoldForNavBar(Widget? navBar) {
   switch (navBar) {
     case CupertinoNavigationBar? _:
       return CupertinoPageScaffold(
-        navigationBar: navBar ?? const CupertinoNavigationBar(),
-        child: const Placeholder(),
-      );
+        navigationBar = navBar ?? const CupertinoNavigationBar(),
+        child = const Placeholder(),
+      ) {}
     case CupertinoSliverNavigationBar():
       return CupertinoPageScaffold(
         child: CustomScrollView(slivers: <Widget>[
@@ -77,6 +77,7 @@ CupertinoPageScaffold? scaffoldForNavBar(Widget? navBar) {
       assert(false, 'Unexpected nav bar type ${navBar.runtimeType}');
       return null;
   }
+  return null;
 }
 
 Finder flying(WidgetTester tester, Finder finder) {

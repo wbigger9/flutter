@@ -647,7 +647,7 @@ class IconButton extends StatelessWidget {
         : switch (overlayColor) {
             (final Color overlayColor) when overlayColor.value == 0 => const MaterialStatePropertyAll<Color?>(Colors.transparent),
             _ => _IconButtonDefaultOverlay(foregroundColor, focusColor, hoverColor, highlightColor, overlayColor),
-          };
+          }
     final MaterialStateProperty<MouseCursor?> mouseCursor = _IconButtonDefaultMouseCursor(enabledMouseCursor, disabledMouseCursor);
 
     return ButtonStyle(
@@ -960,7 +960,7 @@ class _IconButtonM3 extends ButtonStyleButton {
       _IconButtonVariant.filledTonal => _FilledTonalIconButtonDefaultsM3(context, toggleable),
       _IconButtonVariant.outlined    => _OutlinedIconButtonDefaultsM3(context, toggleable),
       _IconButtonVariant.standard    => _IconButtonDefaultsM3(context, toggleable),
-    };
+    }
   }
 
   /// Returns the [IconButtonThemeData.style] of the closest [IconButtonTheme] ancestor.

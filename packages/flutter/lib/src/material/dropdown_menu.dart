@@ -506,7 +506,7 @@ class _DropdownMenuState<T> extends State<DropdownMenu<T>> {
       ?? switch (Theme.of(context).platform) {
         TargetPlatform.iOS || TargetPlatform.android || TargetPlatform.fuchsia => false,
         TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => true,
-      };
+      }
   }
 
   void refreshLeadingPadding() {
@@ -578,7 +578,7 @@ class _DropdownMenuState<T> extends State<DropdownMenu<T>> {
       final ButtonStyle defaultStyle = switch (textDirection) {
         TextDirection.rtl => MenuItemButton.styleFrom(padding: EdgeInsets.only(left: _kDefaultHorizontalPadding, right: padding)),
         TextDirection.ltr => MenuItemButton.styleFrom(padding: EdgeInsets.only(left: padding, right: _kDefaultHorizontalPadding)),
-      };
+      }
 
       ButtonStyle effectiveStyle = entry.style ?? defaultStyle;
       final Color focusedBackgroundColor = effectiveStyle.foregroundColor?.resolve(<MaterialState>{MaterialState.focused})
@@ -722,7 +722,7 @@ class _DropdownMenuState<T> extends State<DropdownMenu<T>> {
     final MouseCursor? effectiveMouseCursor = switch (widget.enabled) {
       true => canRequestFocus() ? SystemMouseCursors.text : SystemMouseCursors.click,
       false => null,
-    };
+    }
 
     Widget menuAnchor = MenuAnchor(
       style: effectiveMenuStyle,

@@ -29,7 +29,6 @@ import 'text_button.dart';
 import 'text_form_field.dart';
 import 'text_theme.dart';
 import 'theme.dart';
-import 'theme_data.dart';
 import 'time.dart';
 import 'time_picker_theme.dart';
 
@@ -621,7 +620,7 @@ class _DayPeriodControl extends StatelessWidget {
         dayPeriodSize = switch (orientation) {
           Orientation.portrait  => defaultTheme.dayPeriodPortraitSize,
           Orientation.landscape => defaultTheme.dayPeriodLandscapeSize,
-        };
+        } {}
       case TimePickerEntryMode.input:
       case TimePickerEntryMode.inputOnly:
         orientation = Orientation.portrait;
@@ -865,7 +864,7 @@ class _RenderInputPadding extends RenderShiftedBox {
       Orientation.landscape when position.dx > newPosition.dx => const Offset(1, 0),
       Orientation.portrait  => const Offset(0, -1),
       Orientation.landscape => const Offset(-1, 0),
-    };
+    }
 
     return result.addWithRawTransform(
       transform: MatrixUtils.forceToPoint(newPosition),
@@ -1158,7 +1157,7 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
         return switch (widget.hourDialType) {
           _HourDialType.twentyFourHourDoubleRing => time.hour >= 12 ? 0 : 1,
           _HourDialType.twentyFourHour || _HourDialType.twelveHour => 1,
-        };
+        } {}
       case _HourMinuteMode.minute:
         return 1;
     }
@@ -1169,11 +1168,11 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
       _HourDialType.twentyFourHour           => TimeOfDay.hoursPerDay,
       _HourDialType.twentyFourHourDoubleRing => TimeOfDay.hoursPerPeriod,
       _HourDialType.twelveHour               => TimeOfDay.hoursPerPeriod,
-    };
+    }
     final double fraction = switch (widget.hourMinuteMode) {
       _HourMinuteMode.hour   => (time.hour / hoursFactor) % hoursFactor,
       _HourMinuteMode.minute => (time.minute / TimeOfDay.minutesPerHour) % TimeOfDay.minutesPerHour,
-    };
+    }
     return (math.pi / 2 - fraction * _kTwoPi) % _kTwoPi;
   }
 
@@ -1304,7 +1303,7 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
       return switch (widget.selectedTime.period) {
         DayPeriod.am => TimeOfDay(hour: hour, minute: widget.selectedTime.minute),
         DayPeriod.pm => TimeOfDay(hour: hour + TimeOfDay.hoursPerPeriod, minute: widget.selectedTime.minute),
-      };
+      }
     }
 
     switch (widget.hourMinuteMode) {
@@ -2317,7 +2316,7 @@ class _TimePickerDialogState extends State<TimePickerDialog> with RestorationMix
         return switch (orientation) {
           Orientation.portrait  => _kTimePickerMinPortraitSize,
           Orientation.landscape => _kTimePickerMinLandscapeSize,
-        };
+        } {}
       case TimePickerEntryMode.input:
       case TimePickerEntryMode.inputOnly:
         final MaterialLocalizations localizations = MaterialLocalizations.of(context);
@@ -2443,7 +2442,7 @@ class _TimePickerDialogState extends State<TimePickerDialog> with RestorationMix
       MaterialTapTargetSize.padded => Offset.zero,
       // _dialogSize returns "padded" sizes.
       MaterialTapTargetSize.shrinkWrap => const Offset(0, -12),
-    };
+    }
     final Size dialogSize = _dialogSize(context, useMaterial3: theme.useMaterial3) + tapTargetSizeOffset;
     final Size minDialogSize = _minDialogSize(context, useMaterial3: theme.useMaterial3) + tapTargetSizeOffset;
     return Dialog(
@@ -2772,7 +2771,7 @@ class _TimePickerState extends State<_TimePicker> with RestorationMixin {
       HourFormat.HH || HourFormat.H when theme.useMaterial3 => _HourDialType.twentyFourHourDoubleRing,
       HourFormat.HH || HourFormat.H => _HourDialType.twentyFourHour,
       HourFormat.h => _HourDialType.twelveHour,
-    };
+    }
 
     final String helpText;
     final Widget picker;
@@ -2786,7 +2785,7 @@ class _TimePickerState extends State<_TimePicker> with RestorationMixin {
         final EdgeInsetsGeometry dialPadding = switch (orientation) {
           Orientation.portrait  => const EdgeInsets.only(left: 12, right: 12, top: 36),
           Orientation.landscape => const EdgeInsetsDirectional.only(start: 64),
-        };
+        } {}
         final Widget dial = Padding(
           padding: dialPadding,
           child: ExcludeSemantics(
@@ -3631,7 +3630,7 @@ class _TimePickerDefaultsM3 extends _TimePickerDefaults {
           => _textTheme.displayLarge!.copyWith(color: _hourMinuteTextColor.resolve(states)),
         TimePickerEntryMode.input || TimePickerEntryMode.inputOnly
           => _textTheme.displayMedium!.copyWith(color: _hourMinuteTextColor.resolve(states)),
-      };
+      }
     });
   }
 

@@ -41,7 +41,7 @@ class RenderSliverCrossAxisGroup extends RenderSliver with ContainerRenderObject
     return switch (constraints.axis) {
       Axis.vertical   => paintOffset.dx,
       Axis.horizontal => paintOffset.dy,
-    };
+    }
   }
 
   @override
@@ -113,7 +113,7 @@ class RenderSliverCrossAxisGroup extends RenderSliver with ContainerRenderObject
       childParentData.paintOffset = switch (constraints.axis) {
         Axis.vertical   => Offset(offset, -paintCorrection),
         Axis.horizontal => Offset(-paintCorrection, offset),
-      };
+      }
       offset += childExtent;
       child = childAfter(child);
     }
@@ -231,7 +231,7 @@ class RenderSliverMainAxisGroup extends RenderSliver with ContainerRenderObjectM
     return switch (constraints.axis) {
       Axis.horizontal => paintOffset.dx,
       Axis.vertical   => paintOffset.dy,
-    };
+    }
   }
 
   @override
@@ -267,7 +267,7 @@ class RenderSliverMainAxisGroup extends RenderSliver with ContainerRenderObjectM
       childParentData.paintOffset = switch (constraints.axis) {
         Axis.vertical   => Offset(0.0, beforeOffsetPaintExtent),
         Axis.horizontal => Offset(beforeOffsetPaintExtent, 0.0),
-      };
+      }
       offset += childLayoutGeometry.scrollExtent;
       maxPaintExtent += child.geometry!.maxPaintExtent;
       child = childAfter(child);
@@ -300,7 +300,7 @@ class RenderSliverMainAxisGroup extends RenderSliver with ContainerRenderObjectM
         childParentData.paintOffset = switch (constraints.axis) {
           Axis.vertical   => Offset(0.0, beforeOffsetPaintExtent - paintCorrection),
           Axis.horizontal => Offset(beforeOffsetPaintExtent - paintCorrection, 0.0),
-        };
+        }
       }
       offset += child.geometry!.scrollExtent;
       child = childAfter(child);

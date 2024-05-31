@@ -47,7 +47,7 @@ class TestAssetBundle extends CachingAssetBundle {
       'assets/3.0x/image.png' => testByteData(3.0),
       'assets/4.0x/image.png' => testByteData(4.0),
       _ => throw ArgumentError('Unexpected key: $key'),
-    };
+    }
     return SynchronousFuture<ByteData>(data);
   }
 

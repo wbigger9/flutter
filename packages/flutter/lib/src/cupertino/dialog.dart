@@ -650,7 +650,7 @@ class _CupertinoActionSheetState extends State<CupertinoActionSheet> {
     final double actionSheetWidth = switch (MediaQuery.orientationOf(context)) {
       Orientation.portrait  => MediaQuery.sizeOf(context).width,
       Orientation.landscape => MediaQuery.sizeOf(context).height,
-    };
+    }
 
     return SafeArea(
       child: ScrollConfiguration(

@@ -2376,7 +2376,7 @@ class VisualDensity with Diagnosticable {
     return switch (platform) {
       TargetPlatform.android || TargetPlatform.iOS || TargetPlatform.fuchsia => standard,
       TargetPlatform.linux || TargetPlatform.macOS || TargetPlatform.windows => compact,
-    };
+    }
   }
 
   /// Copy the current [VisualDensity] with the given values replacing the

@@ -9,7 +9,6 @@ import 'button_style.dart';
 import 'color_scheme.dart';
 import 'colors.dart';
 import 'debug.dart';
-import 'icons.dart';
 import 'ink_well.dart';
 import 'material.dart';
 import 'material_localizations.dart';
@@ -469,7 +468,7 @@ class _StepperState extends State<Stepper> with TickerProviderStateMixin {
       StepState.editing  => Icon(Icons.edit, color: iconColor, size: 18.0),
       StepState.complete => Icon(Icons.check, color: iconColor, size: 18.0),
       StepState.error    => const Center(child: Text('!', style: _kStepStyle)),
-    };
+    }
   }
 
   Color _circleColor(int index) {
@@ -573,7 +572,7 @@ class _StepperState extends State<Stepper> with TickerProviderStateMixin {
     final Color cancelColor = switch (Theme.of(context).brightness) {
       Brightness.light => Colors.black54,
       Brightness.dark  => Colors.white70,
-    };
+    }
 
     final ThemeData themeData = Theme.of(context);
     final ColorScheme colorScheme = themeData.colorScheme;
@@ -942,7 +941,7 @@ class _StepperState extends State<Stepper> with TickerProviderStateMixin {
     return switch (widget.type) {
       StepperType.vertical   => _buildVertical(),
       StepperType.horizontal => _buildHorizontal(),
-    };
+    }
   }
 }
 

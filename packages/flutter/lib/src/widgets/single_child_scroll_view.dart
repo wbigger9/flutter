@@ -414,7 +414,7 @@ class _RenderSingleChildViewport extends RenderBox with RenderObjectWithChildMix
     return switch (axis) {
       Axis.horizontal => size.width,
       Axis.vertical   => size.height,
-    };
+    }
   }
 
   double get _minScrollExtent {
@@ -437,7 +437,7 @@ class _RenderSingleChildViewport extends RenderBox with RenderObjectWithChildMix
     return switch (axis) {
       Axis.horizontal => constraints.heightConstraints(),
       Axis.vertical   => constraints.widthConstraints(),
-    };
+    }
   }
 
   @override
@@ -504,7 +504,7 @@ class _RenderSingleChildViewport extends RenderBox with RenderObjectWithChildMix
       AxisDirection.left  => Offset(position - child!.size.width + size.width, 0.0),
       AxisDirection.right => Offset(-position, 0.0),
       AxisDirection.down  => Offset(0.0, -position),
-    };
+    }
   }
 
   bool _shouldClipAtPaintOffset(Offset paintOffset) {
@@ -610,7 +610,7 @@ class _RenderSingleChildViewport extends RenderBox with RenderObjectWithChildMix
       AxisDirection.left => (size.width, contentSize.width - bounds.right, bounds.width),
       AxisDirection.right => (size.width, bounds.left, bounds.width),
       AxisDirection.down => (size.height, bounds.top, bounds.height),
-    };
+    }
 
     final double targetOffset = leadingScrollOffset - (mainAxisExtent - targetMainAxisExtent) * alignment;
     final Rect targetRect = bounds.shift(_paintOffsetForPosition(targetOffset));

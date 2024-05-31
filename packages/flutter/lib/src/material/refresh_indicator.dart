@@ -360,7 +360,7 @@ class RefreshIndicatorState extends State<RefreshIndicator> with TickerProviderS
     final bool? indicatorAtTopNow = switch (notification.metrics.axisDirection) {
       AxisDirection.down || AxisDirection.up    => true,
       AxisDirection.left || AxisDirection.right => null,
-    };
+    }
     if (indicatorAtTopNow != _isIndicatorAtTop) {
       if (_mode == _RefreshIndicatorMode.drag || _mode == _RefreshIndicatorMode.armed) {
         _dismiss(_RefreshIndicatorMode.canceled);

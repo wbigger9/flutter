@@ -133,7 +133,7 @@ class PlaceholderDimensions {
       ui.PlaceholderAlignment.aboveBaseline ||
       ui.PlaceholderAlignment.belowBaseline => 'PlaceholderDimensions($size, $alignment)',
       ui.PlaceholderAlignment.baseline      => 'PlaceholderDimensions($size, $alignment($baselineOffset from top))',
-    };
+    }
   }
 }
 
@@ -200,7 +200,7 @@ class WordBoundary extends TextBoundary {
       0xD800 => _codePointFromSurrogates(codeUnitAtIndex, _text.codeUnitAt(index + 1)!),
       0xDC00 => _codePointFromSurrogates(_text.codeUnitAt(index - 1)!, codeUnitAtIndex),
       _      => codeUnitAtIndex,
-    };
+    }
   }
 
   static bool _isNewline(int codePoint) {
@@ -213,7 +213,7 @@ class WordBoundary extends TextBoundary {
       0x2028 ||       // Line Separator
       0x2029 => true, // Paragraph Separator
       _ => false,
-    };
+    }
   }
 
   bool _skipSpacesAndPunctuations(int offset, bool forward) {
@@ -326,7 +326,7 @@ class _TextLayout {
     return switch (baseline) {
       TextBaseline.alphabetic => _paragraph.alphabeticBaseline,
       TextBaseline.ideographic => _paragraph.ideographicBaseline,
-    };
+    }
   }
 
   /// The line caret metrics representing the end of text location.
@@ -358,7 +358,7 @@ class _TextLayout {
       0x9 ||        // horizontal tab
       0x20 => true, // space
       _ => false,
-    };
+    }
 
     final double baseline = lineMetrics.baseline;
     final double dx;
@@ -371,12 +371,12 @@ class _TextLayout {
       dx = switch (writingDirection) {
         TextDirection.ltr => glyphBounds.right,
         TextDirection.rtl => glyphBounds.left,
-      };
+      }
     } else {
       dx = switch (writingDirection) {
         TextDirection.ltr => lineMetrics.left + lineMetrics.width,
         TextDirection.rtl => lineMetrics.left,
-      };
+      }
     }
     return _LineCaretMetrics(offset: Offset(dx, baseline), writingDirection: writingDirection);
   }
@@ -385,7 +385,7 @@ class _TextLayout {
     return switch (widthBasis) {
       TextWidthBasis.longestLine => clampDouble(longestLine, minWidth, maxWidth),
       TextWidthBasis.parent => clampDouble(maxIntrinsicLineExtent, minWidth, maxWidth),
-    };
+    }
   }
 }
 
@@ -1312,7 +1312,7 @@ class TextPainter {
   }
 
   static double _computePaintOffsetFraction(TextAlign textAlign, TextDirection textDirection) {
-    return switch ((textAlign, textDirection)) {
+    return switch (textAlign, textDirection) {
       (TextAlign.left, _) => 0.0,
       (TextAlign.right, _) => 1.0,
       (TextAlign.center, _) => 0.5,
@@ -1320,7 +1320,7 @@ class TextPainter {
       (TextAlign.start || TextAlign.justify, TextDirection.rtl) => 1.0,
       (TextAlign.end, TextDirection.ltr) => 1.0,
       (TextAlign.end, TextDirection.rtl) => 0.0,
-    };
+    }
   }
 
   /// Returns the offset at which to paint the caret.
@@ -1342,7 +1342,7 @@ class TextPainter {
     final Offset rawOffset = switch (caretMetrics) {
       _LineCaretMetrics(writingDirection: TextDirection.ltr, :final Offset offset) => offset,
       _LineCaretMetrics(writingDirection: TextDirection.rtl, :final Offset offset) => Offset(offset.dx - caretPrototype.width, offset.dy),
-    };
+    }
     // If offset.dx is outside of the advertised content area, then the associated
     // glyph belongs to a trailing whitespace character. Ideally the behavior
     // should be handled by higher-level implementations (for instance,
@@ -1430,7 +1430,7 @@ class TextPainter {
       TextPosition(:final int offset, affinity: TextAffinity.downstream) => (offset, true),
       TextPosition(:final int offset, affinity: TextAffinity.upstream) when _isNewlineAtOffset(offset - 1) => (offset, true),
       TextPosition(:final int offset, affinity: TextAffinity.upstream) => (offset - 1, false)
-    };
+    }
 
     final int caretPositionCacheKey = anchorToLeadingEdge ? offset : -offset - 1;
     if (caretPositionCacheKey == cachedLayout._previousCaretPositionKey) {
@@ -1473,7 +1473,7 @@ class TextPainter {
       final bool anchorToLeft = switch (glyphInfo.writingDirection) {
         TextDirection.ltr => anchorToLeadingEdge,
         TextDirection.rtl => !anchorToLeadingEdge,
-      };
+      }
       final TextBox box = anchorToLeft ? boxes.first : boxes.last;
       metrics = _LineCaretMetrics(
         offset: Offset(anchorToLeft ? box.left : box.right, box.top),
@@ -1486,7 +1486,7 @@ class TextPainter {
       final double dx = switch (glyphInfo.writingDirection) {
         TextDirection.ltr => anchorToLeadingEdge ? graphemeBounds.left : graphemeBounds.right,
         TextDirection.rtl => anchorToLeadingEdge ? graphemeBounds.right : graphemeBounds.left,
-      };
+      }
       metrics = _LineCaretMetrics(
         offset: Offset(dx, graphemeBounds.top),
         writingDirection: glyphInfo.writingDirection,

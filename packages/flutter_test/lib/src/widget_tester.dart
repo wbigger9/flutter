@@ -936,7 +936,7 @@ class WidgetTester extends WidgetController implements HitTestDispatcher, Ticker
             int() || double() || bool() => 'const ${key.runtimeType}(${key.value})',
             final String value => "const Key('$value')",
             _ => null,
-          };
+          }
           if (keyLabel != null) {
             final Iterable<Element> matches = find.byKey(key).evaluate();
             if (matches.length == 1) {

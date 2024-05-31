@@ -941,7 +941,7 @@ mixin WidgetsBinding on BindingBase, ServicesBinding, SchedulerBinding, GestureB
       'pushRouteInformation' => _handlePushRouteInformation(methodCall.arguments as Map<dynamic, dynamic>),
       // Return false for unhandled method.
       _ => Future<bool>.value(false),
-    };
+    }
   }
 
   Future<dynamic> _handleBackGestureInvocation(MethodCall methodCall) {
@@ -953,7 +953,7 @@ mixin WidgetsBinding on BindingBase, ServicesBinding, SchedulerBinding, GestureB
       'commitBackGesture' => _handleCommitBackGesture(),
       'cancelBackGesture' => _handleCancelBackGesture(),
       _ => throw MissingPluginException(),
-    };
+    }
   }
 
   @override

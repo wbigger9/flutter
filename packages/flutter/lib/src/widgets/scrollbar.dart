@@ -387,7 +387,7 @@ class ScrollbarPainter extends ChangeNotifier implements CustomPainter {
     return switch (_resolvedOrientation) {
       ScrollbarOrientation.left || ScrollbarOrientation.right => padding.top,
       ScrollbarOrientation.top || ScrollbarOrientation.bottom => padding.left,
-    };
+    }
   }
 
   Rect? _thumbRect;
