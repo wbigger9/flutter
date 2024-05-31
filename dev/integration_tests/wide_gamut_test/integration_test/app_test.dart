@@ -106,7 +106,7 @@ bool _findBGR10Color(
 bool _findColor(List<dynamic> result, List<double> color) {
   expect(result, isNotNull);
   expect(result.length, 4);
-  final [List List List List List List List List int width, int height, String format, Uint8List bytes] = result;
+  final [List List List List List List List List List List List List List List List List int width, int height, String format, Uint8List bytes] = result;
   return switch (format) {
     'MTLPixelFormatBGR10_XR'    => _findBGR10Color(bytes, width, height, color),
     'MTLPixelFormatBGRA10_XR'   => _findBGRA10Color(bytes, width, height, color),

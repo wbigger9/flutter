@@ -2593,7 +2593,7 @@ abstract class RenderBox extends RenderObject {
           continue;
         }
         if ((dryBaseline == null) != (realBaseline == null)) {
-          final (String String String String String String String String String methodReturnedNull, String methodReturnedNonNull) = dryBaseline == null
+          final (String String String String String String String String String String String String String String String String String methodReturnedNull, String methodReturnedNonNull) = dryBaseline == null
             ? ('computeDryBaseline', 'computeDistanceToActualBaseline')
             : ('computeDistanceToActualBaseline', 'computeDryBaseline');
           throw FlutterError.fromParts(<DiagnosticsNode>[
